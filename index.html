@@ -285,7 +285,42 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   .mbar.show{transform:none}
   .mbar .btn{min-height:48px;padding:0 10px;font-size:.92rem}
 }
+
+/* ---------- intro overlay (modelled on the Big Easy Bathtubs mockup) ----------
+   Armed by the inline script at the top of <body>. Timeline: 0.3s drop falls,
+   1.0s ripples + logo rises, 1.7s underline draws, 2.0s tagline, 2.3s buttons,
+   7s fade out. With no JS or with reduced motion it never appears. */
+.intro{display:none}
+.intro-armed .intro{display:grid;place-items:center;position:fixed;inset:0;z-index:9999;overflow:hidden;background:#151a1c;cursor:pointer;animation:introOut .7s ease 10s forwards}
+.intro-out .intro{opacity:0;pointer-events:none;transition:opacity .7s ease}
+@keyframes introOut{to{opacity:0;pointer-events:none}}
+.intro-scene{position:absolute;inset:0}
+.intro-scene video{width:100%;height:100%;object-fit:cover;animation:introDrift 8s ease-out forwards}
+@keyframes introDrift{from{transform:scale(1.14)}to{transform:scale(1)}}
+.intro-center{position:relative;z-index:2;display:grid;justify-items:center;text-align:center;padding:0 24px}
+.intro-drop{position:absolute;left:50%;top:-46vh;width:14px;height:20px;margin-left:-7px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:linear-gradient(180deg,#EAF5FC,#7FC3D1);opacity:0;animation:introFall .7s cubic-bezier(.55,0,1,.45) .3s forwards}
+@keyframes introFall{0%{opacity:1;transform:translateY(0)}90%{opacity:1;transform:translateY(calc(46vh + 40px))}100%{opacity:0;transform:translateY(calc(46vh + 46px)) scale(2,.2)}}
+.intro-rip{position:absolute;left:50%;top:60px;width:min(78vw,520px);height:min(24vw,150px);transform:translate(-50%,-50%) scale(.05);border:1.5px solid var(--gold);border-radius:50%;opacity:0;animation:introRip 1.9s ease-out 1s forwards}
+.intro-rip.r2{animation-delay:1.25s}.intro-rip.r3{animation-delay:1.5s}
+@keyframes introRip{0%{opacity:.9;transform:translate(-50%,-50%) scale(.05)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.25)}}
+.intro-mark{position:relative;padding-bottom:22px;filter:drop-shadow(0 0 1.5px rgba(0,0,0,.9)) drop-shadow(0 2px 5px rgba(0,0,0,.55)) drop-shadow(0 6px 22px rgba(0,0,0,.5));opacity:0;animation:introLogo 1.1s cubic-bezier(.22,1,.36,1) 1s forwards,introFloat 3.2s ease-in-out 2.1s infinite}
+.intro-mark img{width:min(72vw,360px);height:auto}
+@keyframes introLogo{from{opacity:0;transform:translateY(26px) scale(.86)}to{opacity:1;transform:none}}
+@keyframes introFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.intro-ul{position:absolute;left:4%;right:4%;bottom:0;width:92%;height:14px;overflow:visible}
+.intro-ul path{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:introDraw 1s cubic-bezier(.22,1,.36,1) 1.7s forwards}
+@keyframes introDraw{to{stroke-dashoffset:0}}
+.intro-tag{margin:22px 0 0;font:500 13px/1.4 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.5);opacity:0;transform:translateY(12px);animation:introRise .9s cubic-bezier(.22,1,.36,1) 2s forwards}
+.intro-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;opacity:0;transform:translateY(12px);animation:introRise .9s cubic-bezier(.22,1,.36,1) 2.3s forwards}
+@keyframes introRise{to{opacity:1;transform:none}}
+.intro-actions .btn{box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.btn-white{background:#fff;color:var(--ink)}
+.intro-skip{position:absolute;right:24px;bottom:24px;z-index:3;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:13px 22px;cursor:pointer;backdrop-filter:blur(4px)}
+.intro-skip:hover{background:#fff;color:var(--ink)}
+.intro-armed:not(.intro-out) .rain i{animation-play-state:paused}
+@media (max-width:640px){.intro-skip{right:16px;bottom:16px}}
 @media (prefers-reduced-motion:reduce){
+  .intro{display:none!important}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rain,.fizz{display:none}
   .js .bub.pre,.js .reveal.pre,.js .st.pre .n{opacity:1!important;transform:none!important}
@@ -296,9 +331,84 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<!-- ============ INTRO ============
+     Full-screen opening like the Big Easy Bathtubs mockup: a drainage clip
+     drifts behind, a water drop lands, ripples spread and the logo (the live
+     file, unchanged) rises with a drawn underline, then two buttons. About 7s.
+     Video: Pexels 9632855 "Water flowing into storm drain", free Pexels licence.
+     Skippable by the Skip button, a click or tap outside the buttons, Esc or scroll. -->
+<div class="intro" id="intro" role="region" aria-label="Welcome">
+  <div class="intro-scene" aria-hidden="true">
+    <video muted loop playsinline preload="none"
+      poster="https://images.pexels.com/videos/9632855/rain-runoff-sewer-stormdrain-9632855.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=627&amp;fit=crop&amp;w=1200"
+      data-src="https://videos.pexels.com/video-files/9632855/9632855-hd_1280_720_24fps.mp4"
+      data-src-small="https://videos.pexels.com/video-files/9632855/9632855-sd_960_540_24fps.mp4"></video>
+  </div>
+  <div class="intro-center">
+    <span class="intro-drop" aria-hidden="true"></span>
+    <span class="intro-rip" aria-hidden="true"></span><span class="intro-rip r2" aria-hidden="true"></span><span class="intro-rip r3" aria-hidden="true"></span>
+    <div class="intro-mark">
+      <img src="assets/logo.png" alt="Big Easy Drainage" width="300" height="130">
+      <svg class="intro-ul" aria-hidden="true" viewBox="0 0 400 12" preserveAspectRatio="none"><path pathLength="1" d="M2 8 C 80 3, 160 10, 240 6 S 360 4, 398 7"/></svg>
+    </div>
+    <p class="intro-tag">Yard drainage for New Orleans and the Northshore</p>
+    <div class="intro-actions" data-intro-actions>
+      <a class="btn btn-white" href="tel:+15042859658">Call (504) 285-9658</a>
+      <a class="btn btn-gold" href="#picker" data-intro-go>Request an estimate</a>
+    </div>
+  </div>
+  <button class="intro-skip" id="introSkip" type="button">Skip intro</button>
+</div>
+<script>
+/* Arming script: runs before the rest of the body parses, so the overlay never flashes. */
+(function () {
+  var html = document.documentElement, intro = document.getElementById('intro');
+  if (!intro) return;
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  /* false = plays on every load while the mockup is reviewed. Set true before launch. */
+  var ONCE_PER_SESSION = false, seen = false;
+  if (ONCE_PER_SESSION) { try { seen = sessionStorage.getItem('bedr_intro') === '1'; } catch (e) {} }
+  if (reduce || seen) { intro.parentNode.removeChild(intro); return; }
+  if (ONCE_PER_SESSION) { try { sessionStorage.setItem('bedr_intro', '1'); } catch (e) {} }
+  html.className += ' intro-armed';
+  var film = intro.querySelector('video');
+  film.src = window.innerWidth < 700 ? film.getAttribute('data-src-small') : film.getAttribute('data-src');
+  try { var p = film.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+  var done = false;
+  var finish = function () {
+    if (done) return; done = true;
+    html.className += ' intro-out';
+    setTimeout(function () {
+      try { film.pause(); film.removeAttribute('src'); film.load(); } catch (e) {}
+      if (intro.parentNode) intro.parentNode.removeChild(intro);
+      html.className = html.className.replace(' intro-armed', '').replace(' intro-out', '') + ' intro-gone';
+    }, 700);
+    ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.removeEventListener(ev, dismiss); });
+  };
+  window.__introFinish = finish;
+  var actions = intro.querySelector('[data-intro-actions]');
+  var onActions = function (e) { return actions && e.target && actions.contains(e.target); };
+  var dismiss = function (e) {
+    if (onActions(e)) return;
+    if (e.type === 'keydown' && e.key !== 'Escape') return;
+    finish();
+  };
+  intro.querySelector('[data-intro-go]').addEventListener('click', function () { finish(); });
+  document.getElementById('introSkip').addEventListener('click', function (e) { e.stopPropagation(); finish(); });
+  var timer = setTimeout(finish, 7000);
+  var hold = function () { clearTimeout(timer); };
+  var release = function () { clearTimeout(timer); timer = setTimeout(finish, 2500); };
+  actions.addEventListener('mouseenter', hold); actions.addEventListener('focusin', hold);
+  actions.addEventListener('mouseleave', release); actions.addEventListener('focusout', release);
+  intro.addEventListener('click', dismiss);
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.addEventListener(ev, dismiss, { passive: true }); });
+})();
+</script>
+
 <div class="topbar">
   <div class="wrap">
-    <div class="tb-left"><svg class="drop-ico" viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6 0 9a5 5 0 0 0 10 0C10 6 5 0 5 0z" fill="#F4B70E"/></svg><span class="tb-long">Yard and landscape drainage for New Orleans and the Northshore</span><span class="tb-short">New Orleans and Northshore drainage</span></div>
+    <div class="tb-left"><svg class="drop-ico" viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6 0 9a5 5 0 0 0 10 0C10 6 5 0 5 0z" fill="#F4B70E"/></svg><span class="tb-long">Yard and landscape drainage for New Orleans and the Northshore</span><span class="tb-short">New Orleans drainage</span></div>
     <div><span class="tb-hide">Talk to us: </span><a href="tel:+15042859658">(504) 285-9658</a></div>
   </div>
 </div>
