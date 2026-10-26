@@ -222,15 +222,37 @@ section{padding:92px 0}
 }
 /* reviews */
 .reviews{background:var(--cream-2)}
-.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rv{position:relative;margin:0;background:#fff;border-radius:22px;padding:30px 26px 24px;box-shadow:0 18px 40px -26px rgba(15,34,48,.55);display:flex;flex-direction:column;gap:14px}
+/* review pipeline: a drain pipe with each review hanging from a spout (light cards on the light section) */
+.rv-flow{position:relative}
+.rv-pipe{position:absolute;left:0;right:0;top:0;height:20px;border-radius:10px;background:#dfe4e6;box-shadow:inset 0 -4px 0 rgba(15,34,48,.08),inset 0 3px 0 rgba(255,255,255,.7);overflow:hidden;z-index:1}
+.rv-pipe .water{position:absolute;top:6px;bottom:6px;left:-40px;right:0;border-radius:4px;background:repeating-linear-gradient(90deg,var(--water) 0 26px,rgba(43,122,140,.35) 26px 40px);animation:pipeFlow 1.4s linear infinite}
+@keyframes pipeFlow{to{transform:translateX(40px)}}
+.rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:58px 2px 28px;scrollbar-width:none}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-track:focus-visible{outline:3px solid var(--gold);outline-offset:6px;border-radius:12px}
+.rv{position:relative;margin:0;background:#fff;border-radius:22px;padding:32px 26px 24px;box-shadow:0 18px 40px -26px rgba(15,34,48,.55);display:flex;flex-direction:column;gap:14px;scroll-snap-align:start}
+.rv::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:22px 22px 0 0;background:var(--water);transform:scaleX(.08);transform-origin:50% 0;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.rv.active::before{transform:scaleX(1)}
+.rv .spout{position:absolute;left:50%;top:-40px;width:16px;height:40px;margin-left:-8px;background:#dfe4e6;box-shadow:inset -4px 0 0 rgba(15,34,48,.07)}
+.rv .spout::after{content:"";position:absolute;left:-5px;right:-5px;bottom:-2px;height:7px;border-radius:3px;background:#cfd6d9}
+.rv .drip{position:absolute;left:50%;bottom:-8px;width:9px;height:12px;margin-left:-4.5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--water);opacity:0}
+.rv.active .drip{animation:rvDrip 2.4s ease-in infinite}
+@keyframes rvDrip{0%{opacity:0;transform:translateY(-8px) scale(.5)}18%{opacity:1;transform:none}55%{opacity:1;transform:translateY(16px)}66%{opacity:0;transform:translateY(20px) scale(1.6,.3)}100%{opacity:0}}
 .rv .stars{letter-spacing:3px;color:var(--gold);font-size:1.15rem}
-.rv .q{font:400 1.08rem/1.55 var(--serif);color:var(--ink);margin:0;flex:1}
-.rv .q::before{content:"\201C";display:block;font:500 3.2rem/0.6 var(--serif);color:var(--gold);margin-bottom:10px}
+.rv .q{font:400 1.06rem/1.55 var(--serif);color:var(--ink);margin:0;flex:1}
+.rv .q::before{content:"";display:block;width:30px;height:39px;margin-bottom:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 44'%3E%3Cpath d='M17 1C17 1 2 18 2 28a15 15 0 0 0 30 0C32 18 17 1 17 1z' fill='%23F4B70E'/%3E%3Ctext x='17' y='38' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%230F2230'%3E%E2%80%9C%3C/text%3E%3C/svg%3E") no-repeat center/contain}
 .rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:.92rem}
-.rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);color:var(--ink);font:600 .95rem/1 var(--sans);flex:0 0 42px}
+.rv .av{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:0 0 44px;color:var(--ink);font:700 .9rem/1 var(--sans);
+  background:repeating-linear-gradient(90deg,var(--cream-2) 0 4px,#fff 4px 7px);border:2px solid var(--stone)}
+.rv .av span{background:#fff;border-radius:6px;padding:3px 4px}
 .rv figcaption b{display:block;color:var(--ink)}
-.js .rv.reveal.pre{transform:translateY(34px) scale(.94)}
+.rv-ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:4px}
+.rv-btn{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s ease,color .2s ease}
+.rv-btn:hover{background:var(--ink);color:#fff}
+.rv-btn:disabled{opacity:.35;cursor:default;background:#fff;color:var(--ink)}
+.rv-btn svg{width:18px;height:18px}
+.rv-level{flex:0 1 280px;height:12px;border-radius:6px;background:#dfe4e6;overflow:hidden;box-shadow:inset 0 2px 0 rgba(15,34,48,.08)}
+.rv-level span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--water-2),var(--water));transition:width .35s ease}
 
 /* map */
 .areas .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
@@ -284,7 +306,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   .mag{height:440px;max-width:560px}
   .sign-grid{grid-template-columns:repeat(2,1fr)}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .rv-grid{grid-template-columns:1fr}
+  .rv-track{grid-auto-columns:minmax(260px,86%)}
   footer .cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
@@ -358,6 +380,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 #picker{scroll-margin-top:120px}
 @media (max-width:640px){.vhero{padding:70px 0;min-height:76vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
 @media (prefers-reduced-motion:reduce){
+  .rv::before{transform:none!important}.rv-track{scroll-behavior:auto}
   .vh-pause{display:none}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rain{display:none}
@@ -732,40 +755,78 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
       <div><div class="eyebrow">Reviews</div><h2 id="rv-h">What homeowners say</h2></div>
       <p>Homeowners and businesses across Greater New Orleans trust Big Easy Drainage to solve their toughest water problems. Here's what they have to say about the results.</p>
     </div>
-    <div class="rv-grid">
-      <figure class="rv reveal">
+    <div class="rv-flow">
+      <div class="rv-pipe" aria-hidden="true"><span class="water"></span></div>
+      <div class="rv-track" id="rvTrack" role="list" tabindex="0" aria-label="Customer reviews. Scroll sideways or use the arrow buttons.">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">Big Easy Drainage crew showed up on the date scheduled and got our drainage issue fixed in one day! They've been professional, prompt &amp; courteous every step of this process. We couldn't be happier with them or their workmanship, highly recommended!</blockquote>
-        <figcaption><span class="av" aria-hidden="true">GR</span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>GR</span></span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">After dealing with a company that installed an ineffective drainage system in my backyard, I found Big Easy Drainage. They immediately responded to me and understood the skepticism after having dealt with other companies who caused problems for me instead of solving them like they were supposed too! The contractor helped resolve these issues by pointing out potential solutions, and now everything works great, thanks again!</blockquote>
-        <figcaption><span class="av" aria-hidden="true">TR</span><span><b>Twila Riggs</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>TR</span></span><span><b>Twila Riggs</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">The new drains were a huge success! We had plenty of rain to test them out, and they worked great. Would definitely recommend their drainage services, thanks for the excellent work!</blockquote>
-        <figcaption><span class="av" aria-hidden="true">LB</span><span><b>Lucilla Burleson</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>LB</span></span><span><b>Lucilla Burleson</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">The company Big Easy Drainage was able to help me out when my backyard drainage system didn't work. They were very quick in responding as well. The system works great! No more flooding of my back porch and no water approaches during heavy rain.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">GR</span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>GR</span></span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">Big Easy Drainage is a company that offers excellent drainage service. The employees are prompt and professional. The price they charge for their work is affordable as well. If you need honest people who will get your drain unclogged or cleared up fast then give these guys a call today.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">RC</span><span><b>Russell Curtis</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>RC</span></span><span><b>Russell Curtis</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal">
+      <figure class="rv" role="listitem">
+        <span class="spout" aria-hidden="true"><i class="drip"></i></span>
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote class="q">The Big Easy Drainage team has been a pleasure to work with. They are professional, timely and offer high-quality services that have helped us solve many of our drainage issues over the years! I would recommend them without hesitation.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">CB</span><span><b>Connie Bracey</b>Verified Customer</span></figcaption>
+        <figcaption><span class="av" aria-hidden="true"><span>CB</span></span><span><b>Connie Bracey</b>Verified Customer</span></figcaption>
       </figure>
+      </div>
+      <div class="rv-ctrl">
+        <button class="rv-btn" id="rvPrev" type="button" aria-label="Previous reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="rv-level" aria-hidden="true"><span id="rvLevel"></span></div>
+        <button class="rv-btn" id="rvNext" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var t=document.getElementById('rvTrack'); if(!t) return;
+  var prev=document.getElementById('rvPrev'), next=document.getElementById('rvNext'), lvl=document.getElementById('rvLevel');
+  var cards=[].slice.call(t.querySelectorAll('.rv'));
+  function step(){ var c=cards[0]; return c ? c.getBoundingClientRect().width + 22 : t.clientWidth; }
+  function update(){
+    var max=t.scrollWidth-t.clientWidth, x=t.scrollLeft;
+    var seen=(t.clientWidth+x)/t.scrollWidth;
+    lvl.style.width=Math.max(8,Math.min(100,seen*100))+'%';
+    prev.disabled = x<=2; next.disabled = x>=max-2;
+  }
+  prev.addEventListener('click',function(){ t.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ t.scrollBy({left:step(),behavior:'smooth'}); });
+  t.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('active', e.intersectionRatio>=0.6); }); },{root:t,threshold:[0,0.6,1]});
+    cards.forEach(function(c){ io.observe(c); });
+  } else { cards.forEach(function(c){ c.classList.add('active'); }); }
+  update();
+})();
+</script>
 
 <!-- AREAS MAP -->
 <section class="areas" aria-labelledby="ar-h">
