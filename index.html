@@ -290,41 +290,36 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   .mbar .btn{min-height:48px;padding:0 10px;font-size:.92rem}
 }
 
-/* ---------- intro overlay (modelled on the Big Easy Bathtubs mockup) ----------
-   Armed by the inline script at the top of <body>. Timeline: 0.3s drop falls,
-   1.0s ripples + logo rises, 1.7s underline draws, 2.0s tagline, 2.3s buttons,
-   7s fade out. With no JS or with reduced motion it never appears. */
-.intro{display:none}
-.intro-armed .intro{display:grid;place-items:center;position:fixed;inset:0;z-index:9999;overflow:hidden;background:#151a1c;cursor:pointer;animation:introOut .7s ease 10s forwards}
-.intro-out .intro{opacity:0;pointer-events:none;transition:opacity .7s ease}
-@keyframes introOut{to{opacity:0;pointer-events:none}}
-.intro-scene{position:absolute;inset:0}
-.intro-scene video{width:100%;height:100%;object-fit:cover;animation:introDrift 8s ease-out forwards}
-@keyframes introDrift{from{transform:scale(1.14)}to{transform:scale(1)}}
-.intro-center{position:relative;z-index:2;display:grid;justify-items:center;text-align:center;padding:0 24px}
-.intro-drop{position:absolute;left:50%;top:-46vh;width:14px;height:20px;margin-left:-7px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:linear-gradient(180deg,#EAF5FC,#7FC3D1);opacity:0;animation:introFall .7s cubic-bezier(.55,0,1,.45) .3s forwards}
-@keyframes introFall{0%{opacity:1;transform:translateY(0)}90%{opacity:1;transform:translateY(calc(46vh + 40px))}100%{opacity:0;transform:translateY(calc(46vh + 46px)) scale(2,.2)}}
-.intro-rip{position:absolute;left:50%;top:60px;width:min(78vw,520px);height:min(24vw,150px);transform:translate(-50%,-50%) scale(.05);border:1.5px solid var(--gold);border-radius:50%;opacity:0;animation:introRip 1.9s ease-out 1s forwards}
-.intro-rip.r2{animation-delay:1.25s}.intro-rip.r3{animation-delay:1.5s}
-@keyframes introRip{0%{opacity:.9;transform:translate(-50%,-50%) scale(.05)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.25)}}
-.intro-mark{position:relative;padding-bottom:22px;filter:drop-shadow(0 0 1.5px rgba(0,0,0,.9)) drop-shadow(0 2px 5px rgba(0,0,0,.55)) drop-shadow(0 6px 22px rgba(0,0,0,.5));opacity:0;animation:introLogo 1.1s cubic-bezier(.22,1,.36,1) 1s forwards,introFloat 3.2s ease-in-out 2.1s infinite}
-.intro-mark img{width:min(72vw,360px);height:auto}
-@keyframes introLogo{from{opacity:0;transform:translateY(26px) scale(.86)}to{opacity:1;transform:none}}
-@keyframes introFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
-.intro-ul{position:absolute;left:4%;right:4%;bottom:0;width:92%;height:14px;overflow:visible}
-.intro-ul path{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:introDraw 1s cubic-bezier(.22,1,.36,1) 1.7s forwards}
-@keyframes introDraw{to{stroke-dashoffset:0}}
-.intro-tag{margin:22px 0 0;font:500 13px/1.4 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.75),0 0 2px rgba(0,0,0,.5);opacity:0;transform:translateY(12px);animation:introRise .9s cubic-bezier(.22,1,.36,1) 2s forwards}
-.intro-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px;opacity:0;transform:translateY(12px);animation:introRise .9s cubic-bezier(.22,1,.36,1) 2.3s forwards}
-@keyframes introRise{to{opacity:1;transform:none}}
-.intro-actions .btn{box-shadow:0 10px 26px rgba(0,0,0,.28)}
+
+/* ---------- video hero ----------
+   Pexels 4306829 "Close-up shot of raindrops in the yard" (free Pexels licence).
+   Poster shows at once; the clip loads only with motion allowed, and pauses off screen. */
+.vhero{position:relative;isolation:isolate;overflow:hidden;min-height:min(84vh,760px);display:grid;place-items:center;text-align:center;color:#fff;background:#1d3a2a;margin-top:-90px;padding:150px 0 90px}
+.vhero video,.vhero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.vhero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,34,48,.6) 0%,rgba(15,34,48,.52) 40%,rgba(15,34,48,.8) 100%)}
+.vhero .inner{max-width:860px;padding:0 24px;display:grid;justify-items:center}
+.vh-logo{position:relative;padding-bottom:20px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6)) drop-shadow(0 8px 26px rgba(0,0,0,.45));animation:vhRise .7s cubic-bezier(.22,1,.36,1) 0s both}
+.vh-logo img{width:min(66vw,340px);height:auto}
+.vh-ul{position:absolute;left:4%;bottom:0;width:92%;height:14px;overflow:visible}
+.vh-ul path{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vhDraw .9s cubic-bezier(.22,1,.36,1) .5s forwards}
+.vhero h1{color:#fff;margin:26px 0 12px;font-size:clamp(2rem,4.4vw,3.3rem);text-shadow:0 2px 18px rgba(0,0,0,.45);animation:vhRise .7s cubic-bezier(.22,1,.36,1) .1s both}
+.vhero h1 .hl{background:linear-gradient(transparent 62%,rgba(244,183,14,.55) 62%)}
+.vhero p{font-size:1.12rem;color:#eef3f5;max-width:40em;margin:0 0 26px;text-shadow:0 1px 10px rgba(0,0,0,.5);animation:vhRise .7s cubic-bezier(.22,1,.36,1) .2s both}
+.vh-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;animation:vhRise .7s cubic-bezier(.22,1,.36,1) .3s both}
+.vh-actions .btn{box-shadow:0 12px 28px -10px rgba(0,0,0,.55)}
 .btn-white{background:#fff;color:var(--ink)}
-.intro-skip{position:absolute;right:24px;bottom:24px;z-index:3;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:13px 22px;cursor:pointer;backdrop-filter:blur(4px)}
-.intro-skip:hover{background:#fff;color:var(--ink)}
-.intro-armed:not(.intro-out) .rain i{animation-play-state:paused}
-@media (max-width:640px){.intro-skip{right:16px;bottom:16px}}
+.vh-scroll{position:absolute;left:50%;bottom:22px;width:26px;height:42px;margin-left:-13px;border:2px solid rgba(255,255,255,.7);border-radius:14px}
+.vh-scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:vhWheel 1.8s ease-in-out infinite}
+@keyframes vhRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes vhDraw{to{stroke-dashoffset:0}}
+@keyframes vhWheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.vh-pause{position:absolute;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;display:grid;place-items:center}
+.vh-pause svg{width:16px;height:16px}
+.hero{padding-top:70px}
+#picker{scroll-margin-top:120px}
+@media (max-width:640px){.vhero{margin-top:-80px;padding:130px 0 80px;min-height:78vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
 @media (prefers-reduced-motion:reduce){
-  .intro{display:none!important}
+  .vh-pause{display:none}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rain,.fizz{display:none}
   .js .bub.pre,.js .reveal.pre,.js .st.pre .n{opacity:1!important;transform:none!important}
@@ -335,80 +330,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ============ INTRO ============
-     Full-screen opening like the Big Easy Bathtubs mockup: a drainage clip
-     drifts behind, a water drop lands, ripples spread and the logo (the live
-     file, unchanged) rises with a drawn underline, then two buttons. About 7s.
-     Video: Pexels 9632855 "Water flowing into storm drain", free Pexels licence.
-     Skippable by the Skip button, a click or tap outside the buttons, Esc or scroll. -->
-<div class="intro" id="intro" role="region" aria-label="Welcome">
-  <div class="intro-scene" aria-hidden="true">
-    <video muted loop playsinline preload="none"
-      poster="https://images.pexels.com/videos/9632855/rain-runoff-sewer-stormdrain-9632855.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=627&amp;fit=crop&amp;w=1200"
-      data-src="https://videos.pexels.com/video-files/9632855/9632855-hd_1280_720_24fps.mp4"
-      data-src-small="https://videos.pexels.com/video-files/9632855/9632855-sd_960_540_24fps.mp4"></video>
-  </div>
-  <div class="intro-center">
-    <span class="intro-drop" aria-hidden="true"></span>
-    <span class="intro-rip" aria-hidden="true"></span><span class="intro-rip r2" aria-hidden="true"></span><span class="intro-rip r3" aria-hidden="true"></span>
-    <div class="intro-mark">
-      <img src="assets/logo.png" alt="Big Easy Drainage" width="300" height="130">
-      <svg class="intro-ul" aria-hidden="true" viewBox="0 0 400 12" preserveAspectRatio="none"><path pathLength="1" d="M2 8 C 80 3, 160 10, 240 6 S 360 4, 398 7"/></svg>
-    </div>
-    <p class="intro-tag">Yard drainage for New Orleans and the Northshore</p>
-    <div class="intro-actions" data-intro-actions>
-      <a class="btn btn-white" href="tel:+15042859658">Call (504) 285-9658</a>
-      <a class="btn btn-gold" href="#picker" data-intro-go>Request an estimate</a>
-    </div>
-  </div>
-  <button class="intro-skip" id="introSkip" type="button">Skip intro</button>
-</div>
-<script>
-/* Arming script: runs before the rest of the body parses, so the overlay never flashes. */
-(function () {
-  var html = document.documentElement, intro = document.getElementById('intro');
-  if (!intro) return;
-  var reduce = false;
-  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-  /* false = plays on every load while the mockup is reviewed. Set true before launch. */
-  var ONCE_PER_SESSION = false, seen = false;
-  if (ONCE_PER_SESSION) { try { seen = sessionStorage.getItem('bedr_intro') === '1'; } catch (e) {} }
-  if (reduce || seen) { intro.parentNode.removeChild(intro); return; }
-  if (ONCE_PER_SESSION) { try { sessionStorage.setItem('bedr_intro', '1'); } catch (e) {} }
-  html.className += ' intro-armed';
-  var film = intro.querySelector('video');
-  film.src = window.innerWidth < 700 ? film.getAttribute('data-src-small') : film.getAttribute('data-src');
-  try { var p = film.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
-  var done = false;
-  var finish = function () {
-    if (done) return; done = true;
-    html.className += ' intro-out';
-    setTimeout(function () {
-      try { film.pause(); film.removeAttribute('src'); film.load(); } catch (e) {}
-      if (intro.parentNode) intro.parentNode.removeChild(intro);
-      html.className = html.className.replace(' intro-armed', '').replace(' intro-out', '') + ' intro-gone';
-    }, 700);
-    ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.removeEventListener(ev, dismiss); });
-  };
-  window.__introFinish = finish;
-  var actions = intro.querySelector('[data-intro-actions]');
-  var onActions = function (e) { return actions && e.target && actions.contains(e.target); };
-  var dismiss = function (e) {
-    if (onActions(e)) return;
-    if (e.type === 'keydown' && e.key !== 'Escape') return;
-    finish();
-  };
-  intro.querySelector('[data-intro-go]').addEventListener('click', function () { finish(); });
-  document.getElementById('introSkip').addEventListener('click', function (e) { e.stopPropagation(); finish(); });
-  var timer = setTimeout(finish, 7000);
-  var hold = function () { clearTimeout(timer); };
-  var release = function () { clearTimeout(timer); timer = setTimeout(finish, 2500); };
-  actions.addEventListener('mouseenter', hold); actions.addEventListener('focusin', hold);
-  actions.addEventListener('mouseleave', release); actions.addEventListener('focusout', release);
-  intro.addEventListener('click', dismiss);
-  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) { window.addEventListener(ev, dismiss, { passive: true }); });
-})();
-</script>
+
 
 <div class="topbar">
   <div class="wrap">
@@ -457,13 +379,55 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 </header>
 
 <main id="main">
-<!-- HERO -->
-<section class="hero" aria-labelledby="h1">
+<!-- VIDEO HERO -->
+<section class="vhero" aria-labelledby="h1">
+  <img class="poster" src="https://images.pexels.com/videos/4306829/grass-rain-raining-rocks-4306829.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=720&amp;fit=crop&amp;w=1280" alt="" fetchpriority="high">
+  <video id="heroVid" muted loop playsinline preload="none" aria-hidden="true"
+    data-src="https://videos.pexels.com/video-files/4306829/4306829-sd_960_540_30fps.mp4"
+    data-src-small="https://videos.pexels.com/video-files/4306829/4306829-sd_640_360_30fps.mp4"></video>
+  <div class="inner">
+    <div class="vh-logo">
+      <img src="assets/logo.png" alt="Big Easy Drainage" width="300" height="130">
+      <svg class="vh-ul" aria-hidden="true" viewBox="0 0 400 12" preserveAspectRatio="none"><path pathLength="1" d="M2 8 C 80 3, 160 10, 240 6 S 360 4, 398 7"/></svg>
+    </div>
+    <h1 id="h1">Standing water in your yard? <span class="hl">Let's get it draining.</span></h1>
+    <p>French drains, catch basins, channel drains, dry wells and sump pumps for homes across New Orleans and the Northshore.</p>
+    <div class="vh-actions">
+      <a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a>
+      <a class="btn btn-white" href="https://www.bigeasydrainage.com/contact/">Contact Us</a>
+    </div>
+  </div>
+  <button class="vh-pause" id="vhPause" type="button" aria-label="Pause background video"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3 2h3v12H3zM10 2h3v12h-3z"/></svg></button>
+  <span class="vh-scroll" aria-hidden="true"></span>
+</section>
+<script>
+(function(){
+  var v=document.getElementById('heroVid'), b=document.getElementById('vhPause');
+  var reduce=false; try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  if(reduce){ v.remove(); b.remove(); return; }  /* the poster image stays */
+  v.src = window.innerWidth < 700 ? v.getAttribute('data-src-small') : v.getAttribute('data-src');
+  var userPaused=false;
+  function play(){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+  v.addEventListener('playing',function(){ v.style.opacity=1; });
+  play();
+  b.addEventListener('click',function(){
+    userPaused=!v.paused; if(v.paused){play();} else {v.pause();}
+    b.setAttribute('aria-label', userPaused?'Play background video':'Pause background video');
+    b.innerHTML = userPaused ? '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2l10 6-10 6z"/></svg>' : '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3 2h3v12H3zM10 2h3v12h-3z"/></svg>';
+  });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ if(!userPaused) play(); } else { v.pause(); } }); }).observe(v);
+  }
+})();
+</script>
+
+<!-- PROBLEM PICKER -->
+<section class="hero" id="estimate" aria-labelledby="pick-h">
   <div class="wrap">
     <div>
-      <div class="eyebrow">New Orleans drainage contractor</div>
-      <h1 id="h1">Standing water in your yard? <span class="hl">Let's get it draining.</span></h1>
-      <p class="lead">Big Easy Drainage designs and installs French drains, catch basins, channel drains, dry wells and sump pumps for homes across Greater New Orleans and the Northshore.</p>
+      <div class="eyebrow">Free drainage estimate</div>
+      <h2 id="pick-h">Tell us what's going on. <span class="hl">We'll find the fix.</span></h2>
+      <p class="lead">Pick the problem that sounds most like your yard, leave your details, and the Big Easy Drainage team will be in touch about your free estimate.</p>
 
       <form class="picker" id="picker" novalidate>
         <fieldset>
@@ -485,7 +449,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
             <label>ZIP code<input name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" required></label>
             <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
           </div>
-          <button class="btn btn-gold" type="submit">Request an estimate</button>
+          <button class="btn btn-gold" type="submit">Get a Free Drainage Estimate</button>
         </div>
         <div class="done" role="status" aria-live="polite">
           <h3>Thanks, we have your request.</h3>
@@ -500,7 +464,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
     </div>
 
     <div class="mag" aria-hidden="false">
-      <figure class="m1"><img src="assets/yard-flood.jpg" width="1400" height="933" alt="Back yard lawn covered in standing rainwater around a young tree" fetchpriority="high"><figcaption>The problem</figcaption><div class="rain" id="rain" aria-hidden="true"></div></figure>
+      <figure class="m1"><img src="assets/yard-flood.jpg" width="1400" height="933" alt="Back yard lawn covered in standing rainwater around a young tree" loading="lazy"><figcaption>The problem</figcaption><div class="rain" id="rain" aria-hidden="true"></div></figure>
       <figure class="m2"><img src="assets/french-drain-gravel.jpg" width="1000" height="667" alt="Gravel French drain with a slot grate running alongside a house" loading="lazy"><figcaption>French drain</figcaption></figure>
       <figure class="m3"><img src="assets/catch-basins.jpg" width="1000" height="667" alt="Two green catch basin grates set level in a lawn" loading="lazy"><figcaption>Catch basins</figcaption></figure>
       <div class="tag"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F4B70E" d="M12 2s-7 7.6-7 12.2A7 7 0 0 0 19 14.2C19 9.6 12 2 12 2z"/></svg><span><b>New Orleans</b> and the Northshore</span></div>
