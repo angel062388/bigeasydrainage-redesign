@@ -51,18 +51,18 @@ p{margin:0 0 1em}
 .tb-short{display:none}
 .topbar .tb-left{display:flex;gap:8px;align-items:center}
 .drop-ico{width:10px;height:14px;display:inline-block}
-header.site{position:sticky;top:0;z-index:50;padding:12px 0;transition:padding .25s ease}
-header.site.scrolled{padding:6px 0}
-.nav{background:var(--ink);border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 22px;box-shadow:var(--shadow);gap:16px}
+header.site{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);transition:box-shadow .25s ease}
+header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
 .nav .logo img{height:46px;width:auto}
 .menu{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
 .menu>li{position:relative}
 .menu>li>a,.menu>li>button{color:#e8eef2;text-decoration:none;font:500 .95rem/1 var(--sans);padding:12px 14px;border-radius:999px;background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .menu>li>a:hover,.menu>li>button:hover,.menu>li>a[aria-current]{background:rgba(255,255,255,.1);color:#fff}
-.sub{position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s ease}
+.sub{position:absolute;top:calc(100% + 10px);left:0;min-width:240px;background:var(--ink);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:var(--shadow);padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s ease}
 .menu>li:hover .sub,.menu>li:focus-within .sub{opacity:1;visibility:visible;transform:none}
-.sub a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.93rem}
-.sub a:hover{background:var(--cream)}
+.sub a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;color:#e8eef2;font-size:.93rem}
+.sub a:hover{background:rgba(255,255,255,.08);color:#fff}
 .nav-call{white-space:nowrap}
 .burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.12);cursor:pointer}
 .burger span{display:block;width:20px;height:2px;background:#fff;margin:4px auto;transition:.25s}
@@ -103,24 +103,12 @@ header.site.scrolled{padding:6px 0}
 .mag .m2{width:46%;height:42%;left:0;top:10%;z-index:1;transform:rotate(-3deg)}
 .mag .m3{width:52%;height:40%;left:6%;bottom:0;z-index:3;transform:rotate(2deg)}
 .mag figcaption{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);color:var(--ink);font:600 .72rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
-.mag .tag{position:absolute;right:-6px;bottom:22%;z-index:4;background:var(--ink);color:#fff;border-radius:18px;padding:14px 18px;font-size:.9rem;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center}
-.mag .tag b{color:var(--gold)}
+.mag .tag{position:absolute;right:-6px;bottom:22%;z-index:4;background:#fff;color:var(--ink);border-radius:18px;padding:14px 18px;font-size:.9rem;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center}
+.mag .tag b{color:var(--ink)}
 .rain{position:absolute;inset:0;z-index:3;pointer-events:none}
 .rain i{position:absolute;top:-12%;width:2px;height:16px;border-radius:2px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.85));animation:fall linear infinite}
 @keyframes fall{to{transform:translateY(560px)}}
 
-/* ---------- bubble strip ---------- */
-.strip{background:var(--ink-2);padding:34px 0;position:relative;overflow:hidden}
-.strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.bub{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;text-align:center;padding:14px;color:#fff;font:500 .92rem/1.2 var(--sans);
-  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.42),rgba(255,255,255,.07) 38%,rgba(127,195,209,.12) 70%,rgba(255,255,255,.22));
-  border:1px solid rgba(255,255,255,.28);box-shadow:inset 0 -10px 24px rgba(127,195,209,.25)}
-.bub b{display:block;color:var(--gold);font-weight:600}
-.js .bub.pre{opacity:0;transform:translateY(40px) scale(.7)}
-.bub.in{animation:bubbleIn .8s cubic-bezier(.2,.8,.25,1) both}
-@keyframes bubbleIn{0%{opacity:0;transform:translateY(40px) scale(.7)}70%{opacity:1;transform:translateY(-4px) scale(1.04)}100%{opacity:1;transform:none}}
-.fizz{position:absolute;bottom:-20px;border-radius:50%;border:1px solid rgba(255,255,255,.35);animation:rise linear infinite;pointer-events:none}
-@keyframes rise{to{transform:translateY(-260px);opacity:0}}
 
 /* ---------- sections ---------- */
 section{padding:92px 0}
@@ -150,20 +138,20 @@ section{padding:92px 0}
 @keyframes flow{to{stroke-dashoffset:-52}}
 .legend{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
 .legend li{display:flex;gap:12px;align-items:flex-start}
-.legend b{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font:600 .85rem/1 var(--sans)}
+.legend b{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font:600 .85rem/1 var(--sans)}
 
 /* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc{position:relative;border-radius:22px;overflow:hidden;min-height:300px;display:flex;align-items:flex-end;text-decoration:none;color:#fff;box-shadow:var(--shadow);isolation:isolate}
-.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s cubic-bezier(.16,1,.3,1)}
-.svc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,34,48,.05) 15%,rgba(15,34,48,.55) 45%,rgba(15,34,48,.94) 78%)}
+.svc{position:relative;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--body);background:#fff;box-shadow:0 18px 40px -28px rgba(15,34,48,.55)}
+.svc img{width:100%;height:210px;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+
 .svc:hover img{transform:scale(1.06)}
 .svc div{padding:22px}
-.svc h3{color:#fff;margin-bottom:.3em}
-.svc p{font-size:.93rem;margin:0;color:#e3ebef}
-.svc .go{display:inline-flex;margin-top:12px;font-weight:600;color:var(--gold)}
-.svc.cta{background:var(--ink);align-items:center;justify-content:center;text-align:center}
-.svc.cta::after{display:none}
+.svc h3{color:var(--ink);margin-bottom:.3em}
+.svc p{font-size:.93rem;margin:0}
+.svc .go{display:inline-flex;margin-top:12px;font-weight:600;color:var(--water)}
+.svc:hover .go{text-decoration:underline}
+.svc.cta{background:var(--cream-2);border:2px dashed var(--stone);box-shadow:none;align-items:center;justify-content:center;text-align:center}
 .svc.cta div{padding:30px}
 
 /* process with pipe */
@@ -175,7 +163,8 @@ section{padding:92px 0}
 .pipe svg{position:absolute;inset:0;width:100%;height:100%}
 .pipe .fill{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:22px}
-.st{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px}
+.st{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:18px 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.st:last-child{border-bottom:0}
 .st .n{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:500 1.4rem/1 var(--serif);color:var(--ink);background:var(--gold);position:relative}
 .st.lit .n::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--gold);animation:ring 1s ease-out forwards}
 @keyframes ring{from{transform:scale(.8);opacity:1}to{transform:scale(1.35);opacity:0}}
@@ -201,7 +190,7 @@ section{padding:92px 0}
 .rv .q{font:400 1.08rem/1.55 var(--serif);color:var(--ink);margin:0;flex:1}
 .rv .q::before{content:"\201C";display:block;font:500 3.2rem/0.6 var(--serif);color:var(--gold);margin-bottom:10px}
 .rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:.92rem}
-.rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font:600 .95rem/1 var(--sans);flex:0 0 42px}
+.rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);color:var(--ink);font:600 .95rem/1 var(--sans);flex:0 0 42px}
 .rv figcaption b{display:block;color:var(--ink)}
 .rv .sample{position:absolute;top:14px;right:14px;font:700 .68rem/1 var(--sans);letter-spacing:.14em;color:#6b4d00;background:#FFF1C2;border:1px dashed var(--gold-deep);border-radius:999px;padding:6px 10px}
 .js .rv.reveal.pre{transform:translateY(34px) scale(.94)}
@@ -264,8 +253,8 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 @media (max-width:860px){
   .menu{display:none}
   .burger{display:block}
-  .nav.open .menu{display:flex;position:absolute;left:12px;right:12px;top:calc(100% + 6px);flex-direction:column;align-items:stretch;background:var(--ink);border-radius:20px;padding:12px;box-shadow:var(--shadow);max-height:75vh;overflow:auto}
-  .nav.open .sub{position:static;opacity:1;visibility:visible;transform:none;background:rgba(255,255,255,.06);box-shadow:none;margin:4px 0 8px}
+  .nav.open .menu{display:flex;position:absolute;left:-16px;right:-16px;top:100%;flex-direction:column;align-items:stretch;background:var(--ink);border-radius:0 0 20px 20px;padding:12px 16px 18px;box-shadow:0 20px 30px -20px rgba(0,0,0,.6);max-height:75vh;overflow:auto}
+  .nav.open .sub{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:0;border-left:2px solid rgba(244,183,14,.5);border-radius:0;box-shadow:none;margin:4px 0 8px 14px;padding:2px 0 2px 6px}
   .nav.open .sub a{color:#e8eef2}
   .nav{position:relative}
   .nav-call{display:none}
@@ -283,11 +272,10 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   .tiles{grid-template-columns:1fr 1fr}
   .tile{padding:10px 8px 10px 38px;font-size:.88rem}
   .tile svg{left:9px;width:20px;height:20px}
-  .bub{width:104px;height:104px;font-size:.8rem}
   .sign-grid,.svc-grid{grid-template-columns:1fr}
   .proc-wrap{grid-template-columns:1fr}
   .pipe{display:none}
-  .st{grid-template-columns:52px 1fr;padding:18px}
+  .st{grid-template-columns:52px 1fr;padding:16px 0 20px}
   .st .n{width:52px;height:52px;font-size:1.2rem}
   .town-list{columns:1}
   footer .cols{grid-template-columns:1fr}
@@ -301,7 +289,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 /* ---------- video hero ----------
    Pexels 4306829 "Close-up shot of raindrops in the yard" (free Pexels licence).
    Poster shows at once; the clip loads only with motion allowed, and pauses off screen. */
-.vhero{position:relative;isolation:isolate;overflow:hidden;min-height:min(84vh,760px);display:grid;place-items:center;text-align:center;color:#fff;background:#1d3a2a;margin-top:-90px;padding:150px 0 90px}
+.vhero{position:relative;isolation:isolate;overflow:hidden;min-height:min(84vh,760px);display:grid;place-items:center;text-align:center;color:#fff;background:#1d3a2a;padding:90px 0}
 .vhero video,.vhero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .vhero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,34,48,.6) 0%,rgba(15,34,48,.52) 40%,rgba(15,34,48,.8) 100%)}
 .vhero .inner{max-width:860px;padding:0 24px;display:grid;justify-items:center}
@@ -315,6 +303,12 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 .vh-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;animation:vhRise .7s cubic-bezier(.22,1,.36,1) .3s both}
 .vh-actions .btn{box-shadow:0 12px 28px -10px rgba(0,0,0,.55)}
 .btn-white{background:#fff;color:var(--ink)}
+/* one Contact Us button, identical in every section */
+.btn-contact{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn-contact:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sec-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.how .sec-cta{grid-column:1/-1;margin-top:0}
+@media (max-width:640px){.sec-cta .btn{width:100%;max-width:340px}}
 .vh-scroll{position:absolute;left:50%;bottom:22px;width:26px;height:42px;margin-left:-13px;border:2px solid rgba(255,255,255,.7);border-radius:14px}
 .vh-scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:vhWheel 1.8s ease-in-out infinite}
 @keyframes vhRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -324,12 +318,12 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 .vh-pause svg{width:16px;height:16px}
 .hero{padding-top:70px}
 #picker{scroll-margin-top:120px}
-@media (max-width:640px){.vhero{margin-top:-80px;padding:130px 0 80px;min-height:78vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
+@media (max-width:640px){.vhero{padding:70px 0;min-height:76vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
 @media (prefers-reduced-motion:reduce){
   .vh-pause{display:none}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rain,.fizz{display:none}
-  .js .bub.pre,.js .reveal.pre,.js .st.pre .n{opacity:1!important;transform:none!important}
+  .rain{display:none}
+  .js .reveal.pre,.js .st.pre .n{opacity:1!important;transform:none!important}
   .pipe .fill{stroke-dashoffset:0!important}
 }
 </style>
@@ -397,11 +391,11 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
       <img src="assets/logo.png" alt="Big Easy Drainage" width="300" height="130">
       <svg class="vh-ul" aria-hidden="true" viewBox="0 0 400 12" preserveAspectRatio="none"><path pathLength="1" d="M2 8 C 80 3, 160 10, 240 6 S 360 4, 398 7"/></svg>
     </div>
-    <h1 id="h1">Standing water in your yard? <span class="hl">Let's get it draining.</span></h1>
+    <h1 id="h1">Standing water in your yard? <span class="hl">Let's get it draining</span></h1>
     <p>French drains, catch basins, channel drains, dry wells and sump pumps for homes across New Orleans and the Northshore.</p>
     <div class="vh-actions">
       <a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a>
-      <a class="btn btn-white" href="https://www.bigeasydrainage.com/contact/">Contact Us</a>
+      <a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a>
     </div>
   </div>
   <button class="vh-pause" id="vhPause" type="button" aria-label="Pause background video"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M3 2h3v12H3zM10 2h3v12h-3z"/></svg></button>
@@ -433,7 +427,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   <div class="wrap">
     <div>
       <div class="eyebrow">Free drainage estimate</div>
-      <h2 id="pick-h">Tell us what's going on. <span class="hl">We'll find the fix.</span></h2>
+      <h2 id="pick-h">Tell us what's going on <span class="hl">and we'll find the fix</span></h2>
       <p class="lead">Pick the problem that sounds most like your yard, leave your details, and the Big Easy Drainage team will be in touch about your free estimate.</p>
 
       <form class="picker" id="picker" novalidate>
@@ -459,14 +453,13 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
           <button class="btn btn-gold" type="submit">Get a Free Drainage Estimate</button>
         </div>
         <div class="done" role="status" aria-live="polite">
-          <h3>Thanks, we have your request.</h3>
+          <h3>Thanks, we have your request</h3>
           <p>Mockup only: this form does not send yet. On the live site it goes to the team's lead inbox.</p>
         </div>
       </form>
 
       <div class="hero-cta">
-        <a class="btn btn-ghost" href="tel:+15042859658">Call (504) 285-9658</a>
-        <small>Prefer to talk it through? Call or use the <a href="https://www.bigeasydrainage.com/contact/">contact page</a>.</small>
+        <a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a>
       </div>
     </div>
 
@@ -478,21 +471,6 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
     </div>
   </div>
 </section>
-
-<!-- BUBBLE STRIP -->
-<div class="strip" aria-label="What we install">
-  <div class="wrap">
-    <ul>
-      <li class="bub"><span><b>French</b>Drains</span></li>
-      <li class="bub"><span><b>Catch</b>Basins</span></li>
-      <li class="bub"><span><b>Channel</b>Drains</span></li>
-      <li class="bub"><span><b>Dry</b>Wells</span></li>
-      <li class="bub"><span><b>Sump</b>Pumps</span></li>
-      <li class="bub"><span><b>Drain</b>Repair</span></li>
-      <li class="bub"><span><b>Northshore</b>&amp; Southshore</span></li>
-    </ul>
-  </div>
-</div>
 
 <!-- SIGNS -->
 <section class="signs" aria-labelledby="signs-h">
@@ -507,6 +485,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
       <article class="sign reveal"><img src="assets/clogged-grate.jpg" width="1400" height="1071" alt="" loading="lazy"><div><h3>Drains that back up</h3><p>Leaves and debris block grates, and existing drains that can't keep up overflow in heavy rain.</p></div></article>
       <article class="sign reveal"><img src="assets/lawn-strip.jpg" width="1400" height="933" alt="" loading="lazy"><div><h3>Stressed grass and plants</h3><p>Waterlogged ground suffocates roots, leaving yellow leaves, bare patches and wilting grass.</p></div></article>
     </div>
+    <div class="sec-cta"><a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
   </div>
 </section>
 
@@ -515,7 +494,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   <div class="wrap">
     <div>
       <div class="eyebrow">How it works</div>
-      <h2 id="how-h">Water in. <span class="hl">Water out.</span></h2>
+      <h2 id="how-h">Water in, <span class="hl">water out</span></h2>
       <p>A French drain is a gravel trench with a perforated pipe inside. Rain soaks down through the gravel, enters the pipe and is carried away from your house and lawn.</p>
       <ol class="legend">
         <li><b>1</b><span>Rain lands on the lawn and soaks into the gravel.</span></li>
@@ -546,9 +525,10 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
         <rect x="36" y="96" width="74" height="24" rx="12" fill="#fff"/><text x="73" y="113" text-anchor="middle" fill="#0F2230">Lawn</text>
         <rect x="36" y="310" width="120" height="24" rx="12" fill="#fff"/><text x="96" y="327" text-anchor="middle" fill="#0F2230">Gravel trench</text>
         <rect x="190" y="310" width="132" height="24" rx="12" fill="#fff"/><text x="256" y="327" text-anchor="middle" fill="#0F2230">Perforated pipe</text>
-        <rect x="430" y="310" width="140" height="24" rx="12" fill="#0F2230"/><text x="500" y="327" text-anchor="middle" fill="#F4B70E">To a safe outlet →</text>
+        <rect x="430" y="310" width="140" height="24" rx="12" fill="#fff"/><text x="500" y="327" text-anchor="middle" fill="#0F2230">To a safe outlet →</text>
       </g>
     </svg>
+    <div class="sec-cta"><a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
   </div>
 </section>
 
@@ -630,7 +610,6 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
         <li>Sitting between the Mississippi River and Lake Pontchartrain, the area is prone to flooding, and even a small amount of rain can overwhelm drainage.</li>
         <li>Heavy rainfall and hurricanes often lead to flooding that damages homes and yards.</li>
       </ul>
-      <p class="src">Source: our own service pages. Figures to be added only with a cited source.</p>
     </div>
   </div>
 </section>
@@ -738,7 +717,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   <img class="bg" src="assets/lawn-strip.jpg" width="1400" height="933" alt="" loading="lazy">
   <div class="wrap">
     <h2>Ready for a dry yard?</h2>
-    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-dark" href="#picker">Request an estimate</a><a class="btn btn-ghost" href="tel:+15042859658">Call (504) 285-9658</a></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
   </div>
 </div>
 </main>
@@ -818,16 +797,12 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   var rain=d.getElementById('rain');
   for(var i=0;i<26;i++){var dr=d.createElement('i');dr.style.left=(Math.random()*100)+'%';dr.style.animationDuration=(0.7+Math.random()*0.6)+'s';dr.style.animationDelay=(-Math.random()*2)+'s';dr.style.opacity=0.4+Math.random()*0.5;rain.appendChild(dr);}
 
-  /* fizz bubbles in the strip */
-  var strip=d.querySelector('.strip');
-  for(var j=0;j<14;j++){var f=d.createElement('span');f.className='fizz';var z=4+Math.random()*10;f.style.width=f.style.height=z+'px';f.style.left=(Math.random()*100)+'%';f.style.animationDuration=(5+Math.random()*6)+'s';f.style.animationDelay=(-Math.random()*8)+'s';strip.appendChild(f);}
 
   /* reveal: only elements still below the fold are hidden, so nothing on screen is ever blank */
   var vh=window.innerHeight;
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.remove('pre');if(el.classList.contains('bub'))el.classList.add('in');if(el.classList.contains('st'))el.classList.add('lit');io.unobserve(el);}})},{rootMargin:'0px 0px 12% 0px'});
-  d.querySelectorAll('.reveal,.bub,.st').forEach(function(el,k){
-    if(el.getBoundingClientRect().top>vh){el.classList.add('pre');if(el.classList.contains('bub'))el.style.animationDelay=(k%7*0.08)+'s';io.observe(el);}
-    else{if(el.classList.contains('bub'))el.classList.add('in');}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.remove('pre');if(el.classList.contains('st'))el.classList.add('lit');io.unobserve(el);}})},{rootMargin:'0px 0px 12% 0px'});
+  d.querySelectorAll('.reveal,.st').forEach(function(el,k){
+    if(el.getBoundingClientRect().top>vh){el.classList.add('pre');io.observe(el);}
   });
   setTimeout(function(){d.querySelectorAll('.pre').forEach(function(el){el.classList.remove('pre');})},6000); /* safety net */
 
