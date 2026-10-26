@@ -225,10 +225,14 @@ details .a{padding:0 20px 18px}
 details[open] .a{animation:slideUp .35s ease}
 
 /* final cta + footer */
-.final{background:var(--gold);padding:64px 0}
+.final{position:relative;isolation:isolate;overflow:hidden;padding:110px 0;background:var(--ink);border-top:4px solid var(--gold)}
+.final .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,34,48,.92) 0%,rgba(15,34,48,.74) 48%,rgba(15,34,48,.6) 100%)}
 .final .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
-.final h2{margin:0}
-.final .btn-dark{background:var(--ink);color:#fff}
+.final h2{margin:0;color:#fff}
+.final .btn-dark{background:var(--gold);color:var(--ink)}
+.final .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+@media (max-width:640px){.final{padding:72px 0}.final::before{background:linear-gradient(180deg,rgba(15,34,48,.86),rgba(15,34,48,.7))}}
 footer{background:var(--ink);color:#b9c7cf;padding:64px 0 120px;font-size:.95rem}
 footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}
 footer h3{color:#fff;font:600 1rem var(--sans);margin-bottom:12px}
@@ -743,6 +747,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 </section>
 
 <div class="final">
+  <img class="bg" src="assets/lawn-strip.jpg" width="1400" height="933" alt="" loading="lazy">
   <div class="wrap">
     <h2>Ready for a dry yard?</h2>
     <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-dark" href="#picker">Request an estimate</a><a class="btn btn-ghost" href="tel:+15042859658">Call (504) 285-9658</a></div>
