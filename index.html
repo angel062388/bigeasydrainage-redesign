@@ -49,6 +49,11 @@ p{margin:0 0 1em}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:40px;gap:16px}
 .topbar a{color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
 .tb-short{display:none}
+.tb-right{display:flex;align-items:center;gap:16px}
+.social{display:flex;gap:6px}
+.social a{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;border:1px solid rgba(255,255,255,.28);transition:color .2s ease,border-color .2s ease}
+.social a:hover{color:var(--gold);border-color:var(--gold)}
+.social svg{width:14px;height:14px}
 .topbar .tb-left{display:flex;gap:8px;align-items:center}
 .drop-ico{width:10px;height:14px;display:inline-block}
 header.site{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);transition:box-shadow .25s ease}
@@ -182,7 +187,40 @@ section{padding:92px 0}
 .facts li{background:#fff;border-radius:16px;padding:16px 18px;border-left:4px solid var(--water)}
 .src{font-size:.8rem;color:#6b737a}
 
-/* reviews placeholder */
+
+/* comparison table (light card on the light section) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cmp-card{background:#fff;border-radius:24px;box-shadow:0 22px 50px -32px rgba(15,34,48,.55);overflow:hidden}
+.cmp{width:100%;border-collapse:collapse;font-size:.97rem}
+.cmp th,.cmp td{padding:18px 22px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp thead th{font:600 .82rem/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--body);background:var(--cream)}
+.cmp thead th.us{color:var(--ink);background:#FFF1C2;font-size:.95rem;letter-spacing:.02em;text-transform:none;font-family:var(--serif)}
+.cmp .pick{display:block;width:max-content;margin-bottom:6px;font:700 .66rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:999px;padding:5px 10px}
+.cmp tbody th{font:500 1.02rem/1.3 var(--serif);color:var(--ink);width:24%}
+.cmp td.us{background:#FFF8E1;color:var(--ink);font-weight:500;width:40%}
+.cmp td.them{color:#6b737a}
+.cmp td{position:relative}
+.cmp td>span:last-child{display:inline}
+.cmp .ic{width:22px;height:22px;flex:0 0 22px;vertical-align:-6px;margin-right:10px}
+.cmp .ic circle{fill:none;stroke-width:1.6}
+.cmp .ic path{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cmp .yes circle{stroke:var(--lawn)}.cmp .yes path{stroke:var(--lawn);stroke-dasharray:16;stroke-dashoffset:0;transition:stroke-dashoffset .6s ease .2s}
+.cmp .no circle{stroke:#b9b3a6}.cmp .no path{stroke:#b9b3a6}
+.js .cmp tr.reveal.pre .yes path{stroke-dashoffset:16}
+.cmp .lbl{display:none}
+.cmp tbody tr:hover td.us{background:#FFF1C2}
+@media (max-width:760px){
+  .cmp thead{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+  .cmp tr{padding:18px 18px 8px;border-bottom:1px solid var(--line)}
+  .cmp tbody th{padding:0 0 10px;border:0;font-size:1.08rem}
+  .cmp td{padding:10px 12px;border:0;border-radius:12px;margin-bottom:8px;display:flex;flex-wrap:wrap;align-items:flex-start}
+  .cmp td .lbl{display:block;width:100%;font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px;color:var(--body)}
+  .cmp td>span:last-child{flex:1}
+  .cmp td.us,.cmp td.them,.cmp tbody th{width:auto}
+}
+/* reviews */
 .reviews{background:var(--cream-2)}
 .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .rv{position:relative;margin:0;background:#fff;border-radius:22px;padding:30px 26px 24px;box-shadow:0 18px 40px -26px rgba(15,34,48,.55);display:flex;flex-direction:column;gap:14px}
@@ -192,7 +230,6 @@ section{padding:92px 0}
 .rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:.92rem}
 .rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);color:var(--ink);font:600 .95rem/1 var(--sans);flex:0 0 42px}
 .rv figcaption b{display:block;color:var(--ink)}
-.rv .sample{position:absolute;top:14px;right:14px;font:700 .68rem/1 var(--sans);letter-spacing:.14em;color:#6b4d00;background:#FFF1C2;border:1px dashed var(--gold-deep);border-radius:999px;padding:6px 10px}
 .js .rv.reveal.pre{transform:translateY(34px) scale(.94)}
 
 /* map */
@@ -260,6 +297,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   .nav-call{display:none}
   .topbar .tb-hide{display:none}
   .tb-long{display:none}.tb-short{display:inline}
+  .topbar .tb-left{display:none}.topbar .wrap{justify-content:center}
 }
 @media (max-width:640px){
   body{font-size:16.5px}
@@ -336,7 +374,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 <div class="topbar">
   <div class="wrap">
     <div class="tb-left"><svg class="drop-ico" viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6 0 9a5 5 0 0 0 10 0C10 6 5 0 5 0z" fill="#F4B70E"/></svg><span class="tb-long">Yard and landscape drainage for New Orleans and the Northshore</span><span class="tb-short">New Orleans drainage</span></div>
-    <div><span class="tb-hide">Talk to us: </span><a href="tel:+15042859658">(504) 285-9658</a></div>
+    <div class="tb-right"><span><span class="tb-hide">Talk to us: </span><a href="tel:+15042859658">(504) 285-9658</a></span><nav class="social" aria-label="Social media"><a href="https://www.facebook.com/BigEasyDrainage" target="_blank" rel="noopener" aria-label="Big Easy Drainage on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></a><a href="https://twitter.com/BDrainage25436" target="_blank" rel="noopener" aria-label="Big Easy Drainage on X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a><a href="https://www.youtube.com/@BigEasyDrainage" target="_blank" rel="noopener" aria-label="Big Easy Drainage on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15V9l5.8 3-5.8 3z"/></svg></a><a href="https://www.linkedin.com/company/big-easy-drainage/" target="_blank" rel="noopener" aria-label="Big Easy Drainage on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zm7 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9.5z"/></svg></a></nav></div>
   </div>
 </div>
 
@@ -614,33 +652,118 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   </div>
 </section>
 
-<!-- REVIEWS: SAMPLE CARDS FOR LAYOUT ONLY.
-     These are NOT real reviews. Replace every card with a real customer review
-     (Google Business Profile or written permission) before anything goes live. -->
+<!-- COMPARISON: rows copied from the live homepage table (read 2026-10-27), typo "satisfactiont" fixed.
+     CHECK BEFORE LAUNCH: "24/7 customer support" conflicts with the posted hours; "Fully licensed and insured"
+     and "Guaranteed satisfaction" need proof or terms. -->
+<section class="compare" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Why choose us</div><h2 id="cmp-h">Choosing the best: how Big Easy Drainage <span class="hl">stands above the rest</span></h2></div>
+      <p>See exactly how Big Easy Drainage compares to a typical drainage company, and why New Orleans homeowners and businesses trust us for landscape drainage that lasts.</p>
+    </div>
+    <div class="cmp-card">
+      <table class="cmp">
+        <caption class="sr">Big Easy Drainage compared with a typical drainage company</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col" class="us"><span class="pick">Recommended</span>Big Easy Drainage</th>
+            <th scope="col" class="them">Other drainage companies</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="reveal">
+          <th scope="row">Expertise</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Years of experience and specialized in drainage solutions</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>General plumbing services, limited drainage expertise</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Service Speed</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Fast and efficient service</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Slower response times</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Pricing</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Affordable, competitive pricing</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Higher or variable pricing</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Customer Satisfaction</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Guaranteed satisfaction</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>No satisfaction guarantee</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Eco-Friendly</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Environmentally responsible practices</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Standard practices, less focus on eco-friendliness</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Service Range</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Comprehensive drainage services including maintenance and installation</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Limited range of services</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Technology</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Advanced, cutting-edge tools and technology</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Basic tools and technology</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Customer Service</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>24/7 customer support</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>9-5 customer support</span></td>
+        </tr>
+        <tr class="reveal">
+          <th scope="row">Licensing and Insurance</th>
+          <td class="us"><span class="lbl">Big Easy Drainage</span><svg class="ic yes" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M7 12.5l3.2 3.2L17 9"/></svg><span>Fully licensed and insured</span></td>
+          <td class="them"><span class="lbl">Other drainage companies</span><svg class="ic no" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg><span>Partially licensed, limited insurance</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sec-cta"><a class="btn btn-gold" href="#picker">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</section>
+
+<!-- REVIEWS: copied word for word from the live homepage testimonials (bigeasydrainage.com, read 2026-10-27).
+     Dashes replaced with commas (house rule). Portraits replaced with initials.
+     CHECK BEFORE LAUNCH: "Gordon Ross" appears twice with different reviews, and two reviewers share one
+     portrait file on the live site, so these may be theme demo content. Confirm they are real customers. -->
 <section class="reviews" aria-labelledby="rv-h">
   <div class="wrap">
     <div class="sec-head">
       <div><div class="eyebrow">Reviews</div><h2 id="rv-h">What homeowners say</h2></div>
-      <p class="mock-note"><b>Sample reviews for layout only.</b> These cards show the design. Replace them with real customer reviews before launch.</p>
+      <p>Homeowners and businesses across Greater New Orleans trust Big Easy Drainage to solve their toughest water problems. Here's what they have to say about the results.</p>
     </div>
     <div class="rv-grid">
-      <figure class="rv reveal" data-sample="true">
-        <span class="sample">SAMPLE</span>
-        <div class="stars" aria-label="Sample rating">★★★★★</div>
-        <blockquote class="q">Our back yard stayed under water for days after every storm. The crew walked us through the plan, put in the drain and left the lawn tidy.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Mandeville</span></figcaption>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">Big Easy Drainage crew showed up on the date scheduled and got our drainage issue fixed in one day! They've been professional, prompt &amp; courteous every step of this process. We couldn't be happier with them or their workmanship, highly recommended!</blockquote>
+        <figcaption><span class="av" aria-hidden="true">GR</span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal" data-sample="true">
-        <span class="sample">SAMPLE</span>
-        <div class="stars" aria-label="Sample rating">★★★★★</div>
-        <blockquote class="q">Water kept pooling against the side of the house. They found where it was coming from and explained every option before starting.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Kenner</span></figcaption>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">After dealing with a company that installed an ineffective drainage system in my backyard, I found Big Easy Drainage. They immediately responded to me and understood the skepticism after having dealt with other companies who caused problems for me instead of solving them like they were supposed too! The contractor helped resolve these issues by pointing out potential solutions, and now everything works great, thanks again!</blockquote>
+        <figcaption><span class="av" aria-hidden="true">TR</span><span><b>Twila Riggs</b>Verified Customer</span></figcaption>
       </figure>
-      <figure class="rv reveal" data-sample="true">
-        <span class="sample">SAMPLE</span>
-        <div class="stars" aria-label="Sample rating">★★★★★</div>
-        <blockquote class="q">Easy to schedule, clear about what the job needed and careful with our yard. We would call them again.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Covington</span></figcaption>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">The new drains were a huge success! We had plenty of rain to test them out, and they worked great. Would definitely recommend their drainage services, thanks for the excellent work!</blockquote>
+        <figcaption><span class="av" aria-hidden="true">LB</span><span><b>Lucilla Burleson</b>Verified Customer</span></figcaption>
+      </figure>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">The company Big Easy Drainage was able to help me out when my backyard drainage system didn't work. They were very quick in responding as well. The system works great! No more flooding of my back porch and no water approaches during heavy rain.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">GR</span><span><b>Gordon Ross</b>Verified Customer</span></figcaption>
+      </figure>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">Big Easy Drainage is a company that offers excellent drainage service. The employees are prompt and professional. The price they charge for their work is affordable as well. If you need honest people who will get your drain unclogged or cleared up fast then give these guys a call today.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">RC</span><span><b>Russell Curtis</b>Verified Customer</span></figcaption>
+      </figure>
+      <figure class="rv reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote class="q">The Big Easy Drainage team has been a pleasure to work with. They are professional, timely and offer high-quality services that have helped us solve many of our drainage issues over the years! I would recommend them without hesitation.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">CB</span><span><b>Connie Bracey</b>Verified Customer</span></figcaption>
       </figure>
     </div>
   </div>
