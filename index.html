@@ -196,8 +196,15 @@ section{padding:92px 0}
 /* reviews placeholder */
 .reviews{background:var(--cream-2)}
 .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rv{border:2px dashed #c9bfa9;border-radius:20px;padding:24px;background:rgba(255,255,255,.55);min-height:170px}
-.rv .stars{letter-spacing:4px;color:#c9bfa9}
+.rv{position:relative;margin:0;background:#fff;border-radius:22px;padding:30px 26px 24px;box-shadow:0 18px 40px -26px rgba(15,34,48,.55);display:flex;flex-direction:column;gap:14px}
+.rv .stars{letter-spacing:3px;color:var(--gold);font-size:1.15rem}
+.rv .q{font:400 1.08rem/1.55 var(--serif);color:var(--ink);margin:0;flex:1}
+.rv .q::before{content:"\201C";display:block;font:500 3.2rem/0.6 var(--serif);color:var(--gold);margin-bottom:10px}
+.rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:.92rem}
+.rv .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font:600 .95rem/1 var(--sans);flex:0 0 42px}
+.rv figcaption b{display:block;color:var(--ink)}
+.rv .sample{position:absolute;top:14px;right:14px;font:700 .68rem/1 var(--sans);letter-spacing:.14em;color:#6b4d00;background:#FFF1C2;border:1px dashed var(--gold-deep);border-radius:999px;padding:6px 10px}
+.js .rv.reveal.pre{transform:translateY(34px) scale(.94)}
 
 /* map */
 .areas .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
@@ -628,17 +635,34 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   </div>
 </section>
 
-<!-- REVIEWS PLACEHOLDER -->
+<!-- REVIEWS: SAMPLE CARDS FOR LAYOUT ONLY.
+     These are NOT real reviews. Replace every card with a real customer review
+     (Google Business Profile or written permission) before anything goes live. -->
 <section class="reviews" aria-labelledby="rv-h">
   <div class="wrap">
     <div class="sec-head">
       <div><div class="eyebrow">Reviews</div><h2 id="rv-h">What homeowners say</h2></div>
-      <p class="mock-note">Placeholder: real Google reviews go here once the Google Business Profile is live. No sample or invented reviews are shown.</p>
+      <p class="mock-note"><b>Sample reviews for layout only.</b> These cards show the design. Replace them with real customer reviews before launch.</p>
     </div>
     <div class="rv-grid">
-      <div class="rv reveal"><div class="stars" aria-hidden="true">★★★★★</div><p>Review slot 1</p></div>
-      <div class="rv reveal"><div class="stars" aria-hidden="true">★★★★★</div><p>Review slot 2</p></div>
-      <div class="rv reveal"><div class="stars" aria-hidden="true">★★★★★</div><p>Review slot 3</p></div>
+      <figure class="rv reveal" data-sample="true">
+        <span class="sample">SAMPLE</span>
+        <div class="stars" aria-label="Sample rating">★★★★★</div>
+        <blockquote class="q">Our back yard stayed under water for days after every storm. The crew walked us through the plan, put in the drain and left the lawn tidy.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Mandeville</span></figcaption>
+      </figure>
+      <figure class="rv reveal" data-sample="true">
+        <span class="sample">SAMPLE</span>
+        <div class="stars" aria-label="Sample rating">★★★★★</div>
+        <blockquote class="q">Water kept pooling against the side of the house. They found where it was coming from and explained every option before starting.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Kenner</span></figcaption>
+      </figure>
+      <figure class="rv reveal" data-sample="true">
+        <span class="sample">SAMPLE</span>
+        <div class="stars" aria-label="Sample rating">★★★★★</div>
+        <blockquote class="q">Easy to schedule, clear about what the job needed and careful with our yard. We would call them again.</blockquote>
+        <figcaption><span class="av" aria-hidden="true">H</span><span><b>Sample homeowner</b>Covington</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
