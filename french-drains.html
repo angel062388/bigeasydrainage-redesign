@@ -424,36 +424,37 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 .pb-phone:hover strong{text-decoration:underline;text-decoration-color:var(--gold)}
 .pb-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
 
-/* ---------- service page ---------- */
-.shero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff;padding:90px 0 80px}
-.shero .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.shero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,34,48,.93) 0%,rgba(15,34,48,.74) 55%,rgba(15,34,48,.5) 100%)}
-.shero .eyebrow{color:var(--water-2)}
-.shero h1{color:#fff;max-width:14em}
-.shero h1 .kw{color:var(--gold)}
-.shero p{color:#e3ebef;font-size:1.15rem;max-width:36em}
-.crumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:.86rem;color:#b9c7cf;margin-bottom:18px}
-.crumbs a{color:#fff;text-decoration:none}.crumbs a:hover{text-decoration:underline}
-.shero .sec-cta{justify-content:flex-start;margin-top:26px}
-.bn{background:var(--cream)}
-.bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.bn-box{background:#fff;border-radius:22px;padding:28px 26px;box-shadow:0 12px 30px -24px rgba(15,34,48,.5);display:grid;gap:10px;align-content:start}
-.bn-box .n{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);font:600 .95rem/1 var(--sans)}
-.bn-box h3{margin:6px 0 0;font-size:1.25rem}
-.bn-box p{margin:0;font-size:.97rem}
-.sv{padding-top:92px}
-.sv .pb-grid{align-items:start}
-.sv-rail-list{list-style:none;margin:0;padding:0;display:grid}
-.sv-rail-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
-.sv-rail-list li:first-child a{border-top:0}
-.sv-rail-list a:hover{color:var(--water)}
-.sv-rail-list a.on{color:var(--water);font-weight:600}
-.sv-rail-list a.on::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
-.pb-body figure{margin:8px 0 26px}
-.pb-body figure img{margin:0;width:100%;aspect-ratio:3/2;object-fit:cover}
+    /* ---------- service page ---------- */
+    .shero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff;padding:90px 0 80px}
+    .shero .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+    .shero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,34,48,.93) 0%,rgba(15,34,48,.74) 55%,rgba(15,34,48,.5) 100%)}
+    .shero .eyebrow{color:var(--water-2)}
+    .shero h1{color:#fff;max-width:14em}
+    .shero h1 .kw{color:var(--gold)}
+    .shero p{color:#e3ebef;font-size:1.15rem;max-width:36em}
+    .crumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:.86rem;color:#b9c7cf;margin-bottom:18px}
+    .crumbs a{color:#fff;text-decoration:none}.crumbs a:hover{text-decoration:underline}
+    .shero .sec-cta{justify-content:flex-start;margin-top:26px}
+    .bn{background:var(--cream)}
+    .bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .bn-box{background:#fff;border-radius:22px;padding:28px 26px;box-shadow:0 12px 30px -24px rgba(15,34,48,.5);display:grid;gap:10px;align-content:start}
+    .bn-box .n{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);font:600 .95rem/1 var(--sans)}
+    .bn-box h3{margin:6px 0 0;font-size:1.25rem}
+    .bn-box p{margin:0;font-size:.97rem}
+    .sv{padding-top:92px}
+    .sv .pb-grid{align-items:start}
+    .sv-rail-list{list-style:none;margin:0;padding:0;display:grid}
+    .sv-rail-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}
+    .sv-rail-list li:first-child a{border-top:0}
+    .sv-rail-list a:hover{color:var(--water)}
+    .sv-rail-list a.on{color:var(--water);font-weight:600}
+    .sv-rail-list a.on::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+    .pb-body figure{margin:8px 0 26px}
+    .pb-body figure img{margin:0;width:100%;aspect-ratio:3/2;object-fit:cover}
+    @media (max-width:1020px){.pb-grid{grid-template-columns:minmax(0,1fr);gap:34px}.pb-rail{position:static;max-height:none;overflow:visible}}
 @media (max-width:900px){.bn-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.shero{padding:64px 0 56px}.bn-grid{grid-template-columns:1fr}.sv{padding-top:64px}.shero .sec-cta .btn{width:100%;max-width:340px}}
-@media (prefers-reduced-motion:reduce){
+    @media (max-width:640px){.pb{padding-bottom:60px}.pb-body{font-size:1.02rem}.shero{padding:64px 0 56px}.bn-grid{grid-template-columns:1fr}.sv{padding-top:64px}.shero .sec-cta .btn{width:100%;max-width:340px}}
+    @media (prefers-reduced-motion:reduce){
   .rv-play{display:none}
   .rv::before{transform:none!important}.rv-track{scroll-behavior:auto}
   .vh-pause{display:none}
@@ -476,10 +477,10 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
         <li><button type="button" aria-haspopup="true">Services <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
           <ul class="sub">
             <li><a href="french-drains.html" aria-current="page">French Drains</a></li>
-            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/">Catch Basins</a></li>
-            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/">Channel Drains</a></li>
-            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/">Dry Wells</a></li>
-            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/">Sump Pumps</a></li>
+            <li><a href="catch-basins.html">Catch Basins</a></li>
+            <li><a href="channel-drains.html">Channel Drains</a></li>
+            <li><a href="dry-wells.html">Dry Wells</a></li>
+            <li><a href="sump-pumps.html">Sump Pumps</a></li>
             <li><a href="https://www.bigeasydrainage.com/drain-repair/">Drain Repair</a></li>
           </ul></li>
         <li><button type="button" aria-haspopup="true">Service Areas <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
@@ -507,29 +508,29 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 </header>
 <main id="main">
 
-<section class="shero" aria-labelledby="h1">
-  <img class="bg" src="assets/french-drain-gravel.jpg" width="1000" height="667" alt="" loading="eager" fetchpriority="high">
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="index.html#services">Services</a><span aria-hidden="true">/</span><span>French Drains</span></nav>
-    <div class="eyebrow">Our services</div>
-    <h1 id="h1">French drains <span class="kw">in New Orleans</span></h1>
-    <p>A French drain is a simple but highly effective system that collects excess water and redirects it away from your property. Underground perforated pipe in a gravel trench captures water before it reaches your foundation.</p>
-    <div class="sec-cta"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
-  </div>
-</section>
+    <section class="shero" aria-labelledby="h1">
+      <img class="bg" src="assets/french-drain-gravel.jpg" width="1000" height="667" alt="" loading="eager" fetchpriority="high">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="index.html#services">Services</a><span aria-hidden="true">/</span><span>French Drains</span></nav>
+        <div class="eyebrow">Our services</div>
+        <h1 id="h1">French drains <span class="kw">in New Orleans</span></h1>
+        <p>A French drain is a simple but highly effective system that collects excess water and redirects it away from your property. Underground perforated pipe in a gravel trench captures water before it reaches your foundation.</p>
+        <div class="sec-cta"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
+      </div>
+    </section>
 
-<section class="bn" aria-labelledby="bn-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="eyebrow">Benefits</div><h2 id="bn-h">Why New Orleans yards <span class="hl">get French drains</span></h2></div>
-      <p>Every point below comes from how the system works: water in through the gravel, out through the pipe, away from the house.</p>
-    </div>
-    <div class="bn-grid"><div class="bn-box reveal"><span class="n" aria-hidden="true">01</span><h3>Protects your property</h3><p>Collects excess water and redirects it away before it reaches your foundation or slab.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">02</span><h3>Built for heavy rain</h3><p>Drains excess water efficiently during heavy rainstorms and hurricanes, when the yard needs it most.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">03</span><h3>Stops runoff and erosion</h3><p>Water soaks down and moves through the pipe instead of washing across the surface.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">04</span><h3>Cost-effective</h3><p>Costs less than other flood management systems while reducing the risk of flooding and property damage.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">05</span><h3>Long-term durability</h3><p>Built with durable materials that withstand heavy rainfall and prolonged exposure to moisture.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">06</span><h3>Simple upkeep</h3><p>Clearing debris and sediment now and then keeps the drain working for years.</p></div></div>
-    <div class="sec-cta"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
-  </div>
-</section>
+    <section class="bn" aria-labelledby="bn-h">
+      <div class="wrap">
+        <div class="sec-head">
+          <div><div class="eyebrow">Benefits</div><h2 id="bn-h">Why New Orleans yards <span class="hl">get French drains</span></h2></div>
+          <p>Every point below comes from how the system works: water in through the gravel, out through the pipe, away from the house.</p>
+        </div>
+        <div class="bn-grid"><div class="bn-box reveal"><span class="n" aria-hidden="true">01</span><h3>Protects your property</h3><p>Collects excess water and redirects it away before it reaches your foundation or slab.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">02</span><h3>Built for heavy rain</h3><p>Drains excess water efficiently during heavy rainstorms and hurricanes, when the yard needs it most.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">03</span><h3>Stops runoff and erosion</h3><p>Water soaks down and moves through the pipe instead of washing across the surface.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">04</span><h3>Cost-effective</h3><p>Costs less than other flood management systems while reducing the risk of flooding and property damage.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">05</span><h3>Long-term durability</h3><p>Built with durable materials that withstand heavy rainfall and prolonged exposure to moisture.</p></div><div class="bn-box reveal"><span class="n" aria-hidden="true">06</span><h3>Simple upkeep</h3><p>Clearing debris and sediment now and then keeps the drain working for years.</p></div></div>
+        <div class="sec-cta"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
+      </div>
+    </section>
 
-<section class="how" aria-labelledby="how-h">
+    <section class="how" aria-labelledby="how-h">
   <div class="wrap">
     <div>
       <div class="eyebrow">How it works</div>
@@ -571,13 +572,13 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   </div>
 </section>
 
-<section class="pb sv" aria-labelledby="s1">
-  <div class="wrap">
-    <div class="pb-grid">
-      <article class="pb-body">
-        <figure class="art-fig" style="margin-top:0"><img src="https://www.bigeasydrainage.com/wp-content/uploads/2023/08/French-Drain-Services-in-New-Orleans.jpg" width="1000" height="667" alt="French Drains" loading="lazy"></figure>
-        <nav class="pb-toc" aria-label="On this page"><p class="pb-toc__t">On this page</p><ol><li><a href="#s1">Water Management Solutions: Advanced French Drain Services in New Orleans</a></li><li><a href="#s2">Understanding the French Drain System</a></li><li><a href="#s3">Installation and Components of a French Drain</a></li><li><a href="#s4">Benefits of Using French Drains in Flood Management</a></li><li><a href="#s5">Maintenance and Upkeep of French Drains</a></li><li><a href="#s6">Efficient French Drain Solutions in New Orleans: Trust Big Easy Drainage for Your Project</a></li></ol></nav>
-<h2 id="s1">Water Management Solutions: Advanced French Drain Services in New Orleans</h2>
+    <section class="pb sv" aria-labelledby="s1">
+      <div class="wrap">
+        <div class="pb-grid">
+          <article class="pb-body">
+            <figure class="art-fig" style="margin-top:0"><img src="https://www.bigeasydrainage.com/wp-content/uploads/2023/08/French-Drain-Services-in-New-Orleans.jpg" width="1000" height="667" alt="French Drains" loading="lazy"></figure>
+            <nav class="pb-toc" aria-label="On this page"><p class="pb-toc__t">On this page</p><ol><li><a href="#s1">Water Management Solutions: Advanced French Drain Services in New Orleans</a></li><li><a href="#s2">Understanding the French Drain System</a></li><li><a href="#s3">Installation and Components of a French Drain</a></li><li><a href="#s4">Benefits of Using French Drains in Flood Management</a></li><li><a href="#s5">Maintenance and Upkeep of French Drains</a></li><li><a href="#s6">Efficient French Drain Solutions in New Orleans: Trust Big Easy Drainage for Your Project</a></li></ol></nav>
+    <h2 id="s1">Water Management Solutions: Advanced French Drain Services in New Orleans</h2>
 <p>Are you tired of dealing with the constant flooding in New Orleans? Well, we have a solution for you, the French Drain system. This innovative <a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/">landscape drainage solution </a><strong>has been proven to effectively manage floodwaters and protect your property from water damage.</strong></p>
 <p>The problem of flooding in New Orleans is well-known, with the city sitting below sea level and surrounded by bodies of water. Heavy rainfall and hurricanes often lead to severe flooding, causing extensive damage to homes and businesses. But with a French Drain, you can say goodbye to those worries.</p>
 <p>So how does it work?<strong> A French Drain is a simple but highly effective system that collects excess water and redirects it away from your property</strong>. By using underground pipes filled with gravel or rock, the drain captures water before it reaches your foundation or basement, preventing any potential damage.</p>
@@ -612,40 +613,40 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 <figure><img alt="French Drain System for residential and commercial properties in NOLA" height="666" loading="lazy" src="https://www.bigeasydrainage.com/wp-content/uploads/2023/08/French-Drain-System.jpg" width="1000"/></figure><p>Are you tired of dealing with excess water pooling around your property after heavy rains? Do you want to protect your home or business from potential water damage caused by flooding? Look no further than <strong>Big Easy Drainage</strong> for the perfect solution, French drains.</p>
 <p>At <a href="index.html"><strong>Big Easy Drainage</strong></a>, we specialize in providing efficient and reliable French drain solutions in New Orleans. Our team of experienced professionals understands the unique drainage challenges that this vibrant city faces and we have the expertise to design and install French drains tailored to your specific needs.</p>
 <p>Don't let water-related issues dampen your property's charm or jeopardize its structural integrity. Trust Big Easy Drainage for your French drain project in New Orleans. <a href="contact.html"><strong>Contact us today</strong></a> to schedule a consultation and take the first step toward a dry and protected property.</p>
-        <div class="pb-foot"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
-      </article>
-      <aside class="pb-rail" aria-label="Services and contact">
-        <div class="pb-box"><p class="pb-label">Our services</p><ul class="sv-rail-list"><li><a href="french-drains.html" class="on" aria-current="page">French Drains</a></li><li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/">Catch Basins</a></li><li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/">Channel Drains</a></li><li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/">Dry Wells</a></li><li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/">Sump Pumps</a></li></ul></div>
-        <div class="pb-cta">
-          <h3>Need expert drainage help?</h3>
-          <p>Get in touch with our team today for a fast, reliable landscape drainage solution.</p>
-          <a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a>
-          <a class="btn btn-contact" href="contact.html">Contact Us</a>
-          <a class="pb-phone" href="tel:+15042859658"><small>Call us</small><strong>(504) 285-9658</strong></a>
-          <a class="pb-phone" style="margin-top:10px;pointer-events:none"><small>Office hours</small><strong style="font-size:1.05rem">Mon to Fri: 8 am to 3 pm</strong></a>
+            <div class="pb-foot"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
+          </article>
+          <aside class="pb-rail" aria-label="Services and contact">
+            <div class="pb-box"><p class="pb-label">Our services</p><ul class="sv-rail-list"><li><a href="french-drains.html" class="on" aria-current="page">French Drains</a></li><li><a href="catch-basins.html">Catch Basins</a></li><li><a href="channel-drains.html">Channel Drains</a></li><li><a href="dry-wells.html">Dry Wells</a></li><li><a href="sump-pumps.html">Sump Pumps</a></li></ul></div>
+            <div class="pb-cta">
+              <h3>Need expert drainage help?</h3>
+              <p>Get in touch with our team today for a fast, reliable landscape drainage solution.</p>
+              <a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a>
+              <a class="btn btn-contact" href="contact.html">Contact Us</a>
+              <a class="pb-phone" href="tel:+15042859658"><small>Call us</small><strong>(504) 285-9658</strong></a>
+              <a class="pb-phone" style="margin-top:10px;pointer-events:none"><small>Office hours</small><strong style="font-size:1.05rem">Mon to Fri: 8 am to 3 pm</strong></a>
+            </div>
+          </aside>
         </div>
-      </aside>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<section id="services" aria-labelledby="svc-h">
+    <section id="services" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec-head">
       <div><div class="eyebrow">Other services</div><h2 id="svc-h">More ways to move water <span class="hl">off your property</span></h2></div>
       <p>From French drains and catch basins to channel drains and sump pumps, we install and repair the systems that move water off your property.</p>
     </div>
     <div class="svc-grid">
-      <a class="svc reveal" href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/"><img src="assets/catch-basins.jpg" width="1000" height="667" alt="" loading="lazy"><div><h3>Catch Basins</h3><p>Grated inlets set in low spots that catch surface water before it pools.</p><span class="go">See catch basins →</span></div></a>
-      <a class="svc reveal" href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/"><img src="assets/channel-drains.jpg" width="1400" height="933" alt="" loading="lazy"><div><h3>Channel Drains</h3><p>Long grated channels for flat areas like driveways, patios and pool decks.</p><span class="go">See channel drains →</span></div></a>
-      <a class="svc reveal" href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/"><img src="assets/pipe-install.jpg" width="1000" height="585" alt="" loading="lazy"><div><h3>Dry Wells</h3><p>Underground chambers that collect and store excess water so it soaks away slowly.</p><span class="go">See dry wells →</span></div></a>
-      <a class="svc reveal" href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/"><img src="assets/sump-pump.jpg" width="1400" height="933" alt="" loading="lazy"><div><h3>Sump Pumps</h3><p>Pump systems that help keep low-lying areas, basements and crawlspaces dry.</p><span class="go">See sump pumps →</span></div></a>
+      <a class="svc reveal" href="catch-basins.html"><img src="assets/catch-basins.jpg" width="1000" height="667" alt="" loading="lazy"><div><h3>Catch Basins</h3><p>Grated inlets set in low spots that catch surface water before it pools.</p><span class="go">See catch basins →</span></div></a>
+      <a class="svc reveal" href="channel-drains.html"><img src="assets/channel-drains.jpg" width="1400" height="933" alt="" loading="lazy"><div><h3>Channel Drains</h3><p>Long grated channels for flat areas like driveways, patios and pool decks.</p><span class="go">See channel drains →</span></div></a>
+      <a class="svc reveal" href="dry-wells.html"><img src="assets/pipe-install.jpg" width="1000" height="585" alt="" loading="lazy"><div><h3>Dry Wells</h3><p>Underground chambers that collect and store excess water so it soaks away slowly.</p><span class="go">See dry wells →</span></div></a>
+      <a class="svc reveal" href="sump-pumps.html"><img src="assets/sump-pump.jpg" width="1400" height="933" alt="" loading="lazy"><div><h3>Sump Pumps</h3><p>Pump systems that help keep low-lying areas, basements and crawlspaces dry.</p><span class="go">See sump pumps →</span></div></a>
       <div class="svc cta reveal"><div><h3>Not sure which you need?</h3><p>Tell us what you're seeing and we'll recommend the right fix after a look at your property.</p><a class="btn btn-gold" href="contact.html" style="margin-top:16px">Get a Free Drainage Estimate</a></div></div>
     </div>
   </div>
 </section>
 
-<section class="process" aria-labelledby="proc-h">
+    <section class="process" aria-labelledby="proc-h">
   <div class="wrap">
     <div class="sec-head">
       <div><div class="eyebrow">Our process</div><h2 id="proc-h">From first call to a dry yard, <span style="color:var(--gold)">step by step</span></h2></div>
@@ -671,7 +672,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   </div>
 </section>
 
-<section class="areas" aria-labelledby="ar-h">
+    <section class="areas" aria-labelledby="ar-h">
   <div class="wrap">
     <div class="map reveal">
       <svg viewBox="0 0 800 440" role="img" aria-labelledby="map-t">
@@ -719,14 +720,14 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
   </div>
 </section>
 
-<div class="final">
+    <div class="final">
   <img class="bg" src="assets/lawn-strip.jpg" width="1400" height="933" alt="" loading="lazy">
   <div class="wrap">
     <h2>Ready for a dry yard?</h2>
     <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" href="contact.html">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="contact.html">Contact Us</a></div>
   </div>
 </div>
-</main>
+    </main>
 
 <footer>
   <div class="wrap">
@@ -738,10 +739,10 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
       </div>
       <div><h3>Services</h3><ul>
         <li><a href="french-drains.html">French Drains</a></li>
-        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/">Catch Basins</a></li>
-        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/">Channel Drains</a></li>
-        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/">Dry Wells</a></li>
-        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/">Sump Pumps</a></li>
+        <li><a href="catch-basins.html">Catch Basins</a></li>
+        <li><a href="channel-drains.html">Channel Drains</a></li>
+        <li><a href="dry-wells.html">Dry Wells</a></li>
+        <li><a href="sump-pumps.html">Sump Pumps</a></li>
         <li><a href="https://www.bigeasydrainage.com/drain-repair/">Drain Repair</a></li></ul></div>
       <div><h3>Service areas</h3><ul>
         <li><a href="https://www.bigeasydrainage.com/service-area/covington/">Covington</a></li>
