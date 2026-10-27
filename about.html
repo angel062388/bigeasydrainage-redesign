@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Big Easy Drainage | New Orleans Drainage Contractor</title>
+<meta name="description" content="Big Easy Drainage is a locally owned New Orleans drainage contractor offering installation, construction, repair and maintenance. Learn how we work and get a free estimate.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2230;--ink-2:#173447;--ink-3:#21465d;
+  --gold:#F4B70E;--gold-2:#FFD15C;--gold-deep:#8A6300;
+  --cream:#F6F3EC;--cream-2:#EEE8DC;--stone:#D9D3C6;--line:#E3DDD0;
+  --lawn:#4E7A34;--water:#2B7A8C;--water-2:#7FC3D1;
+  --body:#46505A;--white:#fff;
+  --serif:"Fraunces",Georgia,serif;--sans:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:18px;--shadow:0 18px 40px -22px rgba(15,34,48,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--body);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--ink);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);font-weight:500;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.9rem,3.3vw,2.6rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font:600 .8rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--water);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+.hl{background:linear-gradient(transparent 62%,rgba(244,183,14,.45) 62%);padding:0 .08em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font:600 .95rem/1 var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 10px 24px -12px rgba(244,183,14,.9)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost-light{border-color:rgba(255,255,255,.55);color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--ink);padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.mock-note{background:#FFF6D6;border:1px dashed var(--gold-deep);color:#5a4300;font-size:.82rem;padding:8px 14px;border-radius:10px}
+
+/* ---------- top bar + header ---------- */
+.topbar{background:var(--ink);color:#cfdbe3;font-size:.86rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:40px;gap:16px}
+.topbar a{color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+.tb-short{display:none}
+.tb-right{display:flex;align-items:center;gap:16px}
+.social{display:flex;gap:6px}
+.social a{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;border:1px solid rgba(255,255,255,.28);transition:color .2s ease,border-color .2s ease}
+.social a:hover{color:var(--gold);border-color:var(--gold)}
+.social svg{width:14px;height:14px}
+.topbar .tb-left{display:flex;gap:8px;align-items:center}
+.drop-ico{width:10px;height:14px;display:inline-block}
+header.site{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);transition:box-shadow .25s ease}
+header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
+.nav .logo img{height:46px;width:auto}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
+.menu>li{position:relative}
+.menu>li>a,.menu>li>button{color:#e8eef2;text-decoration:none;font:500 .95rem/1 var(--sans);padding:12px 14px;border-radius:999px;background:none;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.menu>li>a:hover,.menu>li>button:hover,.menu>li>a[aria-current]{background:rgba(255,255,255,.1);color:#fff}
+.sub{position:absolute;top:calc(100% + 10px);left:0;min-width:240px;background:var(--ink);border:1px solid rgba(255,255,255,.1);border-radius:16px;box-shadow:var(--shadow);padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s ease}
+.menu>li:hover .sub,.menu>li:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.sub a{display:block;padding:9px 12px;border-radius:10px;text-decoration:none;color:#e8eef2;font-size:.93rem}
+.sub a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-call{white-space:nowrap}
+.burger{display:none;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.12);cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:#fff;margin:4px auto;transition:.25s}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 70px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero p.lead{font-size:1.15rem;max-width:34em}
+.picker{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:22px;margin-top:26px;position:relative;overflow:hidden}
+.picker legend{font:600 1.05rem/1.3 var(--serif);color:var(--ink);padding:0;margin-bottom:12px}
+.picker fieldset{border:0;margin:0;padding:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.tile{position:relative;overflow:hidden;border:2px solid var(--line);background:var(--cream);border-radius:14px;padding:12px 12px 12px 44px;text-align:left;font:500 .93rem/1.25 var(--sans);color:var(--ink);cursor:pointer;min-height:56px;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.tile svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:22px;height:22px;color:var(--water)}
+.tile:hover{border-color:var(--water);transform:translateY(-1px)}
+.tile[aria-pressed="true"]{border-color:var(--ink);background:#fff}
+.tile .rip{position:absolute;border-radius:50%;background:rgba(43,122,140,.28);transform:scale(0);animation:ripple .65s ease-out forwards;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+.step2{display:none;margin-top:16px}
+.picker.go .step2{display:block;animation:slideUp .45s cubic-bezier(.16,1,.3,1)}
+@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.fields label{font-size:.82rem;font-weight:600;color:var(--ink);display:grid;gap:5px}
+.fields input{height:48px;border:2px solid var(--line);border-radius:12px;padding:0 14px;font:400 1rem var(--sans);color:var(--ink);background:var(--cream)}
+.fields input:focus{border-color:var(--water);outline:none;background:#fff}
+.picker .chosen{font-size:.9rem;margin-bottom:10px}
+.picker .done{display:none;text-align:center;padding:12px 4px}
+.picker.sent fieldset,.picker.sent .step2{display:none}
+.picker.sent .done{display:block;animation:slideUp .45s ease}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;align-items:center}
+.hero-cta small{font-size:.86rem}
+
+/* magazine stack */
+.mag{position:relative;height:560px}
+.mag figure{position:absolute;margin:0;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(15,34,48,.6);background:var(--stone)}
+.mag figure img{width:100%;height:100%;object-fit:cover}
+.mag .m1{width:68%;height:74%;right:0;top:0;z-index:2}
+.mag .m2{width:46%;height:42%;left:0;top:10%;z-index:1;transform:rotate(-3deg)}
+.mag .m3{width:52%;height:40%;left:6%;bottom:0;z-index:3;transform:rotate(2deg)}
+.mag figcaption{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);color:var(--ink);font:600 .72rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.mag .tag{position:absolute;right:-6px;bottom:22%;z-index:4;background:#fff;color:var(--ink);border-radius:18px;padding:14px 18px;font-size:.9rem;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center}
+.mag .tag b{color:var(--ink)}
+.rain{position:absolute;inset:0;z-index:3;pointer-events:none}
+.rain i{position:absolute;top:-12%;width:2px;height:16px;border-radius:2px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.85));animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(560px)}}
+
+
+/* ---------- sections ---------- */
+section{padding:92px 0}
+.sec-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:40px}
+.sec-head p{margin:0}
+.js .reveal.pre{opacity:0;transform:translateY(24px)}
+.reveal{transition:opacity .6s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+
+/* signs */
+.signs{background:var(--cream)}
+.sign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sign{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 12px 30px -24px rgba(15,34,48,.5)}
+.sign img{height:170px;width:100%;object-fit:cover}
+.sign div{padding:18px 18px 20px}
+.sign h3{font-size:1.12rem;margin-bottom:.35em}
+.sign p{font-size:.95rem;margin:0}
+
+/* how it works illustration */
+.how{background:var(--cream-2)}
+.how .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.xsec{width:100%;height:auto;border-radius:22px;background:#e9f3f5;box-shadow:var(--shadow)}
+.xsec .drop{animation:dropFall 2.4s linear infinite}
+@keyframes dropFall{0%{transform:translateY(-20px);opacity:0}12%{opacity:1}55%{transform:translateY(112px);opacity:1}60%{opacity:0}100%{opacity:0;transform:translateY(112px)}}
+.xsec .seep{stroke-dasharray:6 10;animation:seep 1.6s linear infinite}
+@keyframes seep{to{stroke-dashoffset:-32}}
+.xsec .flow{stroke-dasharray:14 12;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-52}}
+.legend{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.legend li{display:flex;gap:12px;align-items:flex-start}
+.legend b{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font:600 .85rem/1 var(--sans)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{position:relative;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--body);background:#fff;box-shadow:0 18px 40px -28px rgba(15,34,48,.55)}
+.svc img{width:100%;height:210px;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+
+.svc:hover img{transform:scale(1.06)}
+.svc div{padding:22px}
+.svc h3{color:var(--ink);margin-bottom:.3em}
+.svc p{font-size:.93rem;margin:0}
+.svc .go{display:inline-flex;margin-top:12px;font-weight:600;color:var(--water)}
+.svc:hover .go{text-decoration:underline}
+.svc.cta{background:var(--cream-2);border:2px dashed var(--stone);box-shadow:none;align-items:center;justify-content:center;text-align:center}
+.svc.cta div{padding:30px}
+
+/* process with pipe */
+.process{background:var(--ink);color:#c9d6de;position:relative;overflow:hidden}
+.process h2,.process h3{color:#fff}
+.process .eyebrow{color:var(--water-2)}
+.proc-wrap{position:relative;display:grid;grid-template-columns:120px 1fr;gap:0 26px}
+.pipe{position:relative}
+.pipe svg{position:absolute;inset:0;width:100%;height:100%}
+.pipe .fill{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.st{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:18px 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.st:last-child{border-bottom:0}
+.st .n{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:500 1.4rem/1 var(--serif);color:var(--ink);background:var(--gold);position:relative}
+.st.lit .n::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--gold);animation:ring 1s ease-out forwards}
+@keyframes ring{from{transform:scale(.8);opacity:1}to{transform:scale(1.35);opacity:0}}
+.js .st.pre .n{transform:scale(.5);opacity:.3}
+.st .n{transition:transform .6s cubic-bezier(.2,.8,.25,1),opacity .4s ease}
+.st h3{margin-bottom:.3em}
+.st p{margin:0}
+
+/* why nola */
+.nola .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.gauge{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:20px}
+.gauge .wave{animation:wave 6s linear infinite}
+@keyframes wave{to{transform:translateX(-80px)}}
+.facts{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
+.facts li{background:#fff;border-radius:16px;padding:16px 18px;border-left:4px solid var(--water)}
+.src{font-size:.8rem;color:#6b737a}
+
+
+/* comparison table (light card on the light section) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cmp-card{background:#fff;border-radius:24px;box-shadow:0 22px 50px -32px rgba(15,34,48,.55);overflow:hidden}
+.cmp{width:100%;border-collapse:collapse;font-size:.97rem}
+.cmp th,.cmp td{padding:18px 22px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp thead th{font:600 .82rem/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--body);background:var(--cream)}
+.cmp thead th.us{color:var(--ink);background:#FFF1C2;font-size:.95rem;letter-spacing:.02em;text-transform:none;font-family:var(--serif)}
+.cmp .pick{display:block;width:max-content;margin-bottom:6px;font:700 .66rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:999px;padding:5px 10px}
+.cmp tbody th{font:500 1.02rem/1.3 var(--serif);color:var(--ink);width:24%}
+.cmp td.us{background:#FFF8E1;color:var(--ink);font-weight:500;width:40%}
+.cmp td.them{color:#6b737a}
+.cmp td{position:relative}
+.cmp td>span:last-child{display:inline}
+.cmp .ic{width:22px;height:22px;flex:0 0 22px;vertical-align:-6px;margin-right:10px}
+.cmp .ic circle{fill:none;stroke-width:1.6}
+.cmp .ic path{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cmp .yes circle{stroke:var(--lawn)}.cmp .yes path{stroke:var(--lawn);stroke-dasharray:16;stroke-dashoffset:0;transition:stroke-dashoffset .6s ease .2s}
+.cmp .no circle{stroke:#b9b3a6}.cmp .no path{stroke:#b9b3a6}
+.js .cmp tr.reveal.pre .yes path{stroke-dashoffset:16}
+.cmp .lbl{display:none}
+.cmp tbody tr:hover td.us{background:#FFF1C2}
+@media (max-width:760px){
+  .cmp thead{display:none}
+  .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:auto}
+  .cmp tr{padding:18px 18px 8px;border-bottom:1px solid var(--line)}
+  .cmp tbody th{padding:0 0 10px;border:0;font-size:1.08rem}
+  .cmp td{padding:10px 12px;border:0;border-radius:12px;margin-bottom:8px;display:flex;flex-wrap:wrap;align-items:flex-start}
+  .cmp td .lbl{display:block;width:100%;font:600 .7rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px;color:var(--body)}
+  .cmp td>span:last-child{flex:1}
+  .cmp td.us,.cmp td.them,.cmp tbody th{width:auto}
+}
+/* reviews */
+.reviews{background:var(--cream-2)}
+/* review pipeline: a drain pipe with each review hanging from a spout (light cards on the light section) */
+.rv-flow{position:relative}
+.rv-pipe{position:absolute;left:0;right:0;top:0;height:20px;border-radius:10px;background:#dfe4e6;box-shadow:inset 0 -4px 0 rgba(15,34,48,.08),inset 0 3px 0 rgba(255,255,255,.7);overflow:hidden;z-index:1}
+.rv-pipe .water{position:absolute;top:6px;bottom:6px;left:-40px;right:0;border-radius:4px;background:repeating-linear-gradient(90deg,var(--water) 0 26px,rgba(43,122,140,.35) 26px 40px);animation:pipeFlow 1.4s linear infinite}
+@keyframes pipeFlow{to{transform:translateX(40px)}}
+.rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:58px 2px 28px;scrollbar-width:none}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-track:focus-visible{outline:3px solid var(--gold);outline-offset:6px;border-radius:12px}
+.rv{position:relative;margin:0;background:#fff;border-radius:22px;padding:32px 26px 24px;box-shadow:0 18px 40px -26px rgba(15,34,48,.55);display:flex;flex-direction:column;gap:14px;scroll-snap-align:start}
+.rv::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:22px 22px 0 0;background:var(--water);transform:scaleX(.08);transform-origin:50% 0;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.rv.active::before{transform:scaleX(1)}
+.rv .spout{position:absolute;left:50%;top:-40px;width:16px;height:40px;margin-left:-8px;background:#dfe4e6;box-shadow:inset -4px 0 0 rgba(15,34,48,.07)}
+.rv .spout::after{content:"";position:absolute;left:-5px;right:-5px;bottom:-2px;height:7px;border-radius:3px;background:#cfd6d9}
+.rv .drip{position:absolute;left:50%;bottom:-8px;width:9px;height:12px;margin-left:-4.5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--water);opacity:0}
+.rv.active .drip{animation:rvDrip 2.4s ease-in infinite}
+@keyframes rvDrip{0%{opacity:0;transform:translateY(-8px) scale(.5)}18%{opacity:1;transform:none}55%{opacity:1;transform:translateY(16px)}66%{opacity:0;transform:translateY(20px) scale(1.6,.3)}100%{opacity:0}}
+.rv .stars{letter-spacing:3px;color:var(--gold);font-size:1.15rem}
+.rv .q{font:400 1.06rem/1.55 var(--serif);color:var(--ink);margin:0;flex:1}
+.rv .q::before{content:"";display:block;width:30px;height:39px;margin-bottom:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 44'%3E%3Cpath d='M17 1C17 1 2 18 2 28a15 15 0 0 0 30 0C32 18 17 1 17 1z' fill='%23F4B70E'/%3E%3Ctext x='17' y='38' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%230F2230'%3E%E2%80%9C%3C/text%3E%3C/svg%3E") no-repeat center/contain}
+.rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px;font-size:.92rem}
+.rv .av{position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:0 0 44px;color:var(--ink);font:700 .9rem/1 var(--sans);
+  background:repeating-linear-gradient(90deg,var(--cream-2) 0 4px,#fff 4px 7px);border:2px solid var(--stone)}
+.rv .av span{background:#fff;border-radius:6px;padding:3px 4px}
+.rv figcaption b{display:block;color:var(--ink)}
+.rv-ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:4px}
+.rv-btn{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s ease,color .2s ease}
+.rv-btn:hover{background:var(--ink);color:#fff}
+.rv-btn:disabled{opacity:.35;cursor:default;background:#fff;color:var(--ink)}
+.rv-btn svg{width:18px;height:18px}
+.rv-play{width:40px;height:40px;border-width:1.5px;margin-left:4px}
+.rv-play svg{width:14px;height:14px}
+.rv-play .i-play{display:none}
+.rv-play.paused .i-play{display:block}.rv-play.paused .i-pause{display:none}
+.rv-level{flex:0 1 280px;height:12px;border-radius:6px;background:#dfe4e6;overflow:hidden;box-shadow:inset 0 2px 0 rgba(15,34,48,.08)}
+.rv-level span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--water-2),var(--water));transition:width .35s ease}
+
+/* map */
+.areas .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.map{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:10px}
+.map svg{width:100%;height:auto;display:block}
+.map .line{fill:none;stroke:var(--water);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 14;animation:mflow 1.2s linear infinite}
+@keyframes mflow{to{stroke-dashoffset:-32}}
+.map .pin circle.halo{animation:pulse 2.6s ease-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pulse{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.2);opacity:0}}
+.map a text{font:600 13px var(--sans);fill:var(--ink)}
+.map a:hover text,.map a:focus text{fill:var(--water);text-decoration:underline}
+.town-list{columns:2;list-style:none;padding:0;margin:18px 0 0;column-gap:18px}
+.town-list li{margin-bottom:8px;break-inside:avoid}
+.town-list a{text-decoration:none;font-weight:500}
+.town-list a::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--water);margin-right:8px;vertical-align:middle}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+details{background:#fff;border-radius:16px;margin-bottom:12px;box-shadow:0 10px 26px -24px rgba(15,34,48,.6)}
+summary{list-style:none;cursor:pointer;padding:18px 56px 18px 20px;font:500 1.06rem/1.35 var(--serif);color:var(--ink);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:18px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='%230F2230' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat;transition:transform .3s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details .a{padding:0 20px 18px}
+details[open] .a{animation:slideUp .35s ease}
+
+/* final cta + footer */
+.final{position:relative;isolation:isolate;overflow:hidden;padding:110px 0;background:var(--ink);border-top:4px solid var(--gold)}
+.final .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,34,48,.92) 0%,rgba(15,34,48,.74) 48%,rgba(15,34,48,.6) 100%)}
+.final .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.final h2{margin:0;color:#fff}
+.final .btn-dark{background:var(--gold);color:var(--ink)}
+.final .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+@media (max-width:640px){.final{padding:72px 0}.final::before{background:linear-gradient(180deg,rgba(15,34,48,.86),rgba(15,34,48,.7))}}
+footer{background:var(--ink);color:#b9c7cf;padding:64px 0 120px;font-size:.95rem}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px}
+footer h3{color:#fff;font:600 1rem var(--sans);margin-bottom:12px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:8px}
+footer a{color:#e3ebef;text-decoration:none}
+footer a:hover{color:var(--gold)}
+footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+
+/* sticky mobile bar */
+.mbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .hero .wrap,.how .wrap,.nola .wrap,.areas .wrap,.faq .wrap,.sec-head{grid-template-columns:1fr}
+  .mag{height:440px;max-width:560px}
+  .sign-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .rv-track{grid-auto-columns:minmax(260px,86%)}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .menu{display:none}
+  .burger{display:block}
+  .nav.open .menu{display:flex;position:absolute;left:-16px;right:-16px;top:100%;flex-direction:column;align-items:stretch;background:var(--ink);border-radius:0 0 20px 20px;padding:12px 16px 18px;box-shadow:0 20px 30px -20px rgba(0,0,0,.6);max-height:75vh;overflow:auto}
+  .nav.open .sub{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:0;border-left:2px solid rgba(244,183,14,.5);border-radius:0;box-shadow:none;margin:4px 0 8px 14px;padding:2px 0 2px 6px}
+  .nav.open .sub a{color:#e8eef2}
+  .nav{position:relative}
+  .nav-call{display:none}
+  .topbar .tb-hide{display:none}
+  .tb-long{display:none}.tb-short{display:inline}
+  .topbar .tb-left{display:none}.topbar .wrap{justify-content:center}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .wrap{padding:0 16px}
+  section{padding:64px 0}
+  .hero{padding:18px 0 48px}
+  .mag{height:340px}
+  .mag .tag{display:none}
+  .fields{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile{padding:10px 8px 10px 38px;font-size:.88rem}
+  .tile svg{left:9px;width:20px;height:20px}
+  .sign-grid,.svc-grid{grid-template-columns:1fr}
+  .proc-wrap{grid-template-columns:1fr}
+  .pipe{display:none}
+  .st{grid-template-columns:52px 1fr;padding:16px 0 20px}
+  .st .n{width:52px;height:52px;font-size:1.2rem}
+  .town-list{columns:1}
+  footer .cols{grid-template-columns:1fr}
+  .nav .logo img{height:40px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(15,34,48,.96);box-shadow:0 -10px 30px -10px rgba(0,0,0,.4);transform:translateY(110%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+  .mbar.show{transform:none}
+  .mbar .btn{min-height:48px;padding:0 10px;font-size:.92rem}
+}
+
+
+/* ---------- video hero ----------
+   Pexels 4306829 "Close-up shot of raindrops in the yard" (free Pexels licence).
+   Poster shows at once; the clip loads only with motion allowed, and pauses off screen. */
+.vhero{position:relative;isolation:isolate;overflow:hidden;min-height:min(84vh,760px);display:grid;place-items:center;text-align:center;color:#fff;background:#1d3a2a;padding:90px 0}
+.vhero video,.vhero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.vhero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,34,48,.6) 0%,rgba(15,34,48,.52) 40%,rgba(15,34,48,.8) 100%)}
+.vhero .inner{max-width:860px;padding:0 24px;display:grid;justify-items:center}
+.vh-logo{position:relative;padding-bottom:20px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6)) drop-shadow(0 8px 26px rgba(0,0,0,.45));animation:vhRise .7s cubic-bezier(.22,1,.36,1) 0s both}
+.vh-logo img{width:min(66vw,340px);height:auto}
+.vh-ul{position:absolute;left:4%;bottom:0;width:92%;height:14px;overflow:visible}
+.vh-ul path{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vhDraw .9s cubic-bezier(.22,1,.36,1) .5s forwards}
+.vhero h1{color:#fff;margin:26px 0 12px;font-size:clamp(2rem,4.4vw,3.3rem);text-shadow:0 2px 18px rgba(0,0,0,.45);animation:vhRise .7s cubic-bezier(.22,1,.36,1) .1s both}
+.vhero h1 .hl{background:linear-gradient(transparent 62%,rgba(244,183,14,.55) 62%)}
+.vhero p{font-size:1.12rem;color:#eef3f5;max-width:40em;margin:0 0 26px;text-shadow:0 1px 10px rgba(0,0,0,.5);animation:vhRise .7s cubic-bezier(.22,1,.36,1) .2s both}
+.vh-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;animation:vhRise .7s cubic-bezier(.22,1,.36,1) .3s both}
+.vh-actions .btn{box-shadow:0 12px 28px -10px rgba(0,0,0,.55)}
+.btn-white{background:#fff;color:var(--ink)}
+/* one Contact Us button, identical in every section */
+.btn-contact{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn-contact:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sec-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.how .sec-cta,.hero .sec-cta,.areas .sec-cta{grid-column:1/-1;margin-top:0}
+.process .sec-cta{margin-top:44px}
+@media (max-width:640px){.sec-cta .btn{width:100%;max-width:340px}}
+.vh-scroll{position:absolute;left:50%;bottom:22px;width:26px;height:42px;margin-left:-13px;border:2px solid rgba(255,255,255,.7);border-radius:14px}
+.vh-scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:vhWheel 1.8s ease-in-out infinite}
+@keyframes vhRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes vhDraw{to{stroke-dashoffset:0}}
+@keyframes vhWheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.vh-pause{position:absolute;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;display:grid;place-items:center}
+.vh-pause svg{width:16px;height:16px}
+.hero{padding-top:70px}
+#picker{scroll-margin-top:120px}
+@media (max-width:640px){.vhero{padding:70px 0;min-height:76vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
+
+/* ---------- about page ---------- */
+.ahero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff;padding:90px 0 80px}
+.ahero .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.ahero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,34,48,.92) 0%,rgba(15,34,48,.72) 55%,rgba(15,34,48,.45) 100%)}
+.ahero .eyebrow{color:var(--water-2)}
+.ahero h1{color:#fff;max-width:14em}
+.ahero p{color:#e3ebef;font-size:1.15rem;max-width:36em}
+.crumbs{font-size:.86rem;color:#b9c7cf;margin-bottom:18px}
+.crumbs a{color:#fff;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.who .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.who p{font-size:1.08rem}
+.who-photo{position:relative}
+.who-photo img{border-radius:22px;box-shadow:var(--shadow);width:100%;height:auto}
+.who-photo .pill{position:absolute;left:18px;bottom:18px;background:#fff;color:var(--ink);border-radius:999px;padding:10px 16px;font:600 .9rem/1 var(--sans);box-shadow:var(--shadow);display:flex;gap:8px;align-items:center}
+.vals{background:var(--cream-2)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.val{background:#fff;border-radius:20px;padding:26px 22px;box-shadow:0 12px 30px -24px rgba(15,34,48,.5)}
+.val .ico{width:48px;height:48px;border-radius:14px;background:var(--cream);display:grid;place-items:center;margin-bottom:16px;color:var(--water)}
+.val .ico svg{width:24px;height:24px}
+.val h3{font-size:1.15rem;margin-bottom:.4em}
+.val p{margin:0;font-size:.95rem}
+.offer .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.offer ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.offer li{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 12px 30px -24px rgba(15,34,48,.5)}
+.offer li svg{flex:0 0 24px;width:24px;height:24px;color:var(--lawn)}
+.offer li b{display:block;color:var(--ink)}
+.contact-card{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:28px;display:grid;gap:18px}
+.contact-card .row{display:flex;gap:14px;align-items:flex-start}
+.contact-card .row svg{flex:0 0 22px;width:22px;height:22px;color:var(--water);margin-top:3px}
+.contact-card .row b{display:block;color:var(--ink);font-weight:600}
+.contact-card .row a{text-decoration:none;font-weight:500}
+@media (max-width:1020px){.who .wrap,.offer .wrap{grid-template-columns:1fr}.val-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.val-grid{grid-template-columns:1fr}.ahero{padding:56px 0}}
+@media (prefers-reduced-motion:reduce){
+  .rv-play{display:none}
+  .rv::before{transform:none!important}.rv-track{scroll-behavior:auto}
+  .vh-pause{display:none}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rain{display:none}
+  .js .reveal.pre,.js .st.pre .n{opacity:1!important;transform:none!important}
+  .pipe .fill{stroke-dashoffset:0!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html" aria-label="Big Easy Drainage home"><img src="assets/logo.png" width="300" height="130" alt="Big Easy Drainage"></a>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><button type="button" aria-haspopup="true">Services <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
+          <ul class="sub">
+            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/french-drains/">French Drains</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/">Catch Basins</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/">Channel Drains</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/">Dry Wells</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/">Sump Pumps</a></li>
+            <li><a href="https://www.bigeasydrainage.com/drain-repair/">Drain Repair</a></li>
+          </ul></li>
+        <li><button type="button" aria-haspopup="true">Service Areas <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6"/></svg></button>
+          <ul class="sub">
+            <li><a href="https://www.bigeasydrainage.com/service-area/baton-rouge/">Baton Rouge</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/covington/">Covington</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/gretna/">Gretna</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/hammond/">Hammond</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/kenner/">Kenner</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/laplace/">LaPlace</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/madisonville/">Madisonville</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/mandeville/">Mandeville</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/slidell/">Slidell</a></li>
+            <li><a href="https://www.bigeasydrainage.com/service-area/st-rose/">St Rose</a></li>
+          </ul></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="https://www.bigeasydrainage.com/blog/">Blog</a></li>
+        <li><a href="https://www.bigeasydrainage.com/faq/">FAQs</a></li>
+        <li><a href="https://www.bigeasydrainage.com/contact/">Contact</a></li>
+      </ul>
+      <a class="btn btn-gold nav-call" href="tel:+15042859658"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>(504) 285-9658</a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- ABOUT HERO: copy from the live /about/ page -->
+<section class="ahero" aria-labelledby="h1">
+  <img class="bg" src="assets/lawn-channel.jpg" width="1400" height="934" alt="" fetchpriority="high">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / About</nav>
+    <div class="eyebrow">About us</div>
+    <h1 id="h1">New Orleans' trusted landscape drainage contractor</h1>
+    <p>Protecting properties with custom, lasting solutions.</p>
+    <div class="sec-cta" style="justify-content:flex-start;margin-top:26px"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</section>
+
+<!-- WHO WE ARE: copy from the live /about/ page, word for word -->
+<section class="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="who-photo reveal">
+      <img src="assets/french-drain-grate.jpg" width="1000" height="666" alt="Slot grate of a French drain set in gravel beside a lawn" loading="lazy">
+      <span class="pill"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F4B70E" d="M12 2s-7 7.6-7 12.2A7 7 0 0 0 19 14.2C19 9.6 12 2 12 2z"/></svg>Locally owned and operated</span>
+    </div>
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2 id="who-h">About Big Easy Drainage Company</h2>
+      <p>Big Easy Drainage is a locally owned and operated drainage services company that has been serving New Orleans and the surrounding areas for many years. We are committed to providing our customers with the best possible landscape drainage solutions at the most affordable prices.</p>
+      <p>We offer a variety of services, including drainage installation, construction, repair, and maintenance. If you are in need of any type of yard drainage solution, please do not hesitate to <a href="https://www.bigeasydrainage.com/contact/">contact us</a>. We would be more than happy to assist you in finding the perfect solution for your needs. Thank you for choosing <a href="https://www.bigeasydrainage.com/">Big Easy Drainage</a>!</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US: the four points from the live homepage, word for word -->
+<section class="vals" aria-labelledby="vals-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Why choose us</div><h2 id="vals-h">Why choose Big Easy Drainage <span class="hl">for your landscape?</span></h2></div>
+      <p>Delivering reliable, cost-effective, and professional drainage solutions backed by quality workmanship and exceptional customer service.</p>
+    </div>
+    <div class="val-grid">
+      <article class="val reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Expert Drainage Solutions</h3><p>Customized drainage solutions designed to protect your property and deliver lasting results.</p></article>
+      <article class="val reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></div><h3>Affordable Pricing</h3><p>High-quality drainage services at fair, transparent prices without compromising on quality.</p></article>
+      <article class="val reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></div><h3>Comprehensive Services</h3><p>From maintenance and repairs to new installations, we handle all your drainage needs.</p></article>
+      <article class="val reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Customer Satisfaction Guarantee</h3><p>We stand behind our work with dependable service and a commitment to your satisfaction.</p></article>
+    </div>
+    <div class="sec-cta"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</section>
+
+<section class="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Our process</div><h2 id="proc-h">From first call to a dry yard, <span style="color:var(--gold)">step by step</span></h2></div>
+      <p>From the first conversation to long-term support, our five-step process delivers drainage that protects your property.</p>
+    </div>
+    <div class="proc-wrap">
+      <div class="pipe" aria-hidden="true">
+        <svg viewBox="0 0 120 520" preserveAspectRatio="none">
+          <path d="M60 10V510" stroke="rgba(255,255,255,.12)" stroke-width="22" stroke-linecap="round" fill="none"/>
+          <path class="fill" id="pipeFill" d="M60 10V510" stroke="#2B7A8C" stroke-width="14" stroke-linecap="round" fill="none" style="--len:500"/>
+          <path d="M60 10V510" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="4 18" fill="none"/>
+        </svg>
+      </div>
+      <ol class="steps">
+        <li class="st"><span class="n">01</span><div><h3>Understanding your needs</h3><p>We listen to your drainage concerns and learn about your property's specific challenges and goals.</p></div></li>
+        <li class="st"><span class="n">02</span><div><h3>Creating a custom plan</h3><p>We design a drainage plan that fits your property and blends into your landscape.</p></div></li>
+        <li class="st"><span class="n">03</span><div><h3>Professional installation</h3><p>Our team installs your new drainage system with care and precision.</p></div></li>
+        <li class="st"><span class="n">04</span><div><h3>Thorough inspection</h3><p>We check and test the system to make sure everything is working.</p></div></li>
+        <li class="st"><span class="n">05</span><div><h3>Ongoing support</h3><p>You get simple maintenance tips and ongoing support to keep the system running for years.</p></div></li>
+      </ol>
+    </div>
+    <div class="sec-cta"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</section>
+
+<!-- WHAT WE DO + CONTACT CARD: services from the live site; phone, location, hours from the live homepage -->
+<section class="offer" aria-labelledby="off-h">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">What we do</div>
+      <h2 id="off-h">Complete drainage solutions <span class="hl">for every landscape</span></h2>
+      <p>From French drains and catch basins to channel drains and sump pumps, we deliver complete landscape drainage solutions built to protect your New Orleans property.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.8 2.8L16 9.5"/></svg><span><b>Drainage installation and construction</b>New systems designed for your property, from French drains to catch basins, channel drains, dry wells and sump pumps.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.8 2.8L16 9.5"/></svg><span><b>Drainage repair</b>Fixes for clogged, damaged or underperforming drains.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.8 2.8L16 9.5"/></svg><span><b>Drainage maintenance</b>Simple maintenance tips and ongoing support to keep your system running for years.</span></li>
+      </ul>
+    </div>
+    <div class="contact-card reveal">
+      <div class="eyebrow" style="margin:0">Proud to be serving the expertise you can trust</div>
+      <p style="margin:0">Connect with our landscape drainage experts to discuss your outdoor drainage needs. We provide reliable solutions designed to protect and enhance your landscape.</p>
+      <div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span><b>Phone</b><a href="tel:+15042859658">(504) 285-9658</a></span></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Location</b>New Orleans, LA</span></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Office hours</b>9:00 am to 6:00 pm</span></div>
+      <div class="sec-cta" style="justify-content:flex-start;margin-top:4px"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="areas" aria-labelledby="ar-h">
+  <div class="wrap">
+    <div class="map reveal">
+      <svg viewBox="0 0 800 440" role="img" aria-labelledby="map-t">
+        <title id="map-t">Schematic map of the towns we serve around Lake Pontchartrain, joined by a flowing water line</title>
+        <rect width="800" height="440" rx="18" fill="#f3f7f4"/>
+        <ellipse cx="470" cy="190" rx="200" ry="78" fill="#cfe6ec"/>
+        <text x="470" y="196" text-anchor="middle" font-family="Fraunces, serif" font-size="17" fill="#2B7A8C" font-style="italic">Lake Pontchartrain</text>
+        <path d="M0 330 C120 300 200 360 300 330 S420 290 480 330 S600 400 680 360 S760 320 800 340" fill="none" stroke="#cfe6ec" stroke-width="18"/>
+        <text x="150" y="362" font-family="Fraunces, serif" font-size="14" fill="#2B7A8C" font-style="italic">Mississippi River</text>
+        <path class="line" d="M70 210 L250 280 L330 300 L392 286 L490 300 L520 340 M490 300 L700 170 L590 118 L520 100 L440 76 L392 100 L300 74"/>
+        <g class="pins">
+          <a href="https://www.bigeasydrainage.com/service-area/baton-rouge/"><g class="pin"><circle class="halo" cx="70" cy="210" r="9" fill="#2B7A8C"/><circle cx="70" cy="210" r="7" fill="#0F2230"/></g><text x="70" y="236" text-anchor="middle">Baton Rouge</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/hammond/"><g class="pin"><circle class="halo" cx="300" cy="74" r="9" fill="#2B7A8C"/><circle cx="300" cy="74" r="7" fill="#0F2230"/></g><text x="300" y="58" text-anchor="middle">Hammond</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/madisonville/"><g class="pin"><circle class="halo" cx="392" cy="100" r="9" fill="#2B7A8C"/><circle cx="392" cy="100" r="7" fill="#0F2230"/></g><text x="380" y="126" text-anchor="middle">Madisonville</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/covington/"><g class="pin"><circle class="halo" cx="440" cy="76" r="9" fill="#2B7A8C"/><circle cx="440" cy="76" r="7" fill="#0F2230"/></g><text x="452" y="58" text-anchor="middle">Covington</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/mandeville/"><g class="pin"><circle class="halo" cx="520" cy="100" r="9" fill="#2B7A8C"/><circle cx="520" cy="100" r="7" fill="#0F2230"/></g><text x="548" y="88" text-anchor="middle">Mandeville</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/slidell/"><g class="pin"><circle class="halo" cx="700" cy="170" r="9" fill="#2B7A8C"/><circle cx="700" cy="170" r="7" fill="#0F2230"/></g><text x="700" y="152" text-anchor="middle">Slidell</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/laplace/"><g class="pin"><circle class="halo" cx="250" cy="280" r="9" fill="#2B7A8C"/><circle cx="250" cy="280" r="7" fill="#0F2230"/></g><text x="236" y="262" text-anchor="middle">LaPlace</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/st-rose/"><g class="pin"><circle class="halo" cx="330" cy="300" r="9" fill="#2B7A8C"/><circle cx="330" cy="300" r="7" fill="#0F2230"/></g><text x="318" y="326" text-anchor="middle">St Rose</text></a>
+          <a href="https://www.bigeasydrainage.com/service-area/kenner/"><g class="pin"><circle class="halo" cx="392" cy="286" r="9" fill="#2B7A8C"/><circle cx="392" cy="286" r="7" fill="#0F2230"/></g><text x="392" y="268" text-anchor="middle">Kenner</text></a>
+          <g class="pin"><circle class="halo" cx="490" cy="300" r="11" fill="#F4B70E"/><circle cx="490" cy="300" r="9" fill="#F4B70E" stroke="#0F2230" stroke-width="2"/></g><text x="490" y="282" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="700" fill="#0F2230">New Orleans</text>
+          <a href="https://www.bigeasydrainage.com/service-area/gretna/"><g class="pin"><circle class="halo" cx="520" cy="340" r="9" fill="#2B7A8C"/><circle cx="520" cy="340" r="7" fill="#0F2230"/></g><text x="548" y="364" text-anchor="middle">Gretna</text></a>
+        </g>
+        <text x="780" y="428" text-anchor="end" font-family="Outfit, sans-serif" font-size="11" fill="#6b737a">Schematic, not to scale</text>
+      </svg>
+    </div>
+    <div>
+      <div class="eyebrow">Where we work</div>
+      <h2 id="ar-h">From the Northshore to the <span class="hl">river parishes</span></h2>
+      <p>Big Easy Drainage installs and repairs drainage systems across Greater New Orleans. Don't see your town? <a href="https://www.bigeasydrainage.com/contact/">Get in touch</a>, there's a good chance we cover it.</p>
+      <ul class="town-list">
+        <li><a href="https://www.bigeasydrainage.com/service-area/baton-rouge/">Baton Rouge</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/covington/">Covington</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/gretna/">Gretna</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/hammond/">Hammond</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/kenner/">Kenner</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/laplace/">LaPlace</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/madisonville/">Madisonville</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/mandeville/">Mandeville</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/slidell/">Slidell</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/st-rose/">St Rose</a></li>
+      </ul>
+    </div>
+    <div class="sec-cta"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</section>
+
+<div class="final">
+  <img class="bg" src="assets/lawn-strip.jpg" width="1400" height="933" alt="" loading="lazy">
+  <div class="wrap">
+    <h2>Ready for a dry yard?</h2>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get a Free Drainage Estimate</a><a class="btn btn-contact" href="https://www.bigeasydrainage.com/contact/">Contact Us</a></div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="assets/logo.png" width="300" height="130" alt="Big Easy Drainage" style="height:56px;width:auto;margin-bottom:14px" loading="lazy">
+        <p>Yard and landscape drainage for New Orleans and the Northshore.</p>
+        <p><a href="tel:+15042859658">(504) 285-9658</a><br>New Orleans, LA</p>
+      </div>
+      <div><h3>Services</h3><ul>
+        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/french-drains/">French Drains</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/catch-basins/">Catch Basins</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/channel-drains/">Channel Drains</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/dry-wells/">Dry Wells</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service/landscape-drainage-solutions/sump-pumps/">Sump Pumps</a></li>
+        <li><a href="https://www.bigeasydrainage.com/drain-repair/">Drain Repair</a></li></ul></div>
+      <div><h3>Service areas</h3><ul>
+        <li><a href="https://www.bigeasydrainage.com/service-area/covington/">Covington</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/kenner/">Kenner</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/mandeville/">Mandeville</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/slidell/">Slidell</a></li>
+        <li><a href="https://www.bigeasydrainage.com/service-area/">All service areas</a></li></ul></div>
+      <div><h3>Company</h3><ul>
+        <li><a href="https://www.bigeasydrainage.com/about/">About</a></li>
+        <li><a href="https://www.bigeasydrainage.com/blog/">Blog</a></li>
+        <li><a href="https://www.bigeasydrainage.com/faq/">FAQs</a></li>
+        <li><a href="https://www.bigeasydrainage.com/contact/">Contact</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Big Easy Drainage</span>
+      <span><a href="https://www.bigeasydrainage.com/privacy-policy/">Privacy Policy</a> · <a href="https://www.bigeasydrainage.com/disclaimer/">Disclaimer</a></span>
+      <span class="mock-note" style="background:transparent;color:#b9c7cf;border-color:#4b6577">Review mockup. Not the live site.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="btn btn-ghost btn-ghost-light" href="tel:+15042859658">Call now</a><a class="btn btn-gold" href="https://www.bigeasydrainage.com/contact/">Get an estimate</a></div>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* header shrink + mobile bar */
+  var hdr=d.querySelector('header.site'), mbar=d.getElementById('mbar');
+  function onScroll(){var y=window.scrollY;hdr.classList.toggle('scrolled',y>40);mbar.classList.toggle('show',y>500);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* burger */
+  var nav=d.querySelector('.nav'), bg=d.querySelector('.burger');
+  bg.addEventListener('click',function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu');});
+
+
+  if(reduce) return; /* everything below is decoration only */
+
+
+
+  /* reveal: only elements still below the fold are hidden, so nothing on screen is ever blank */
+  var vh=window.innerHeight;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.remove('pre');if(el.classList.contains('st'))el.classList.add('lit');io.unobserve(el);}})},{rootMargin:'0px 0px 12% 0px'});
+  d.querySelectorAll('.reveal,.st').forEach(function(el,k){
+    if(el.getBoundingClientRect().top>vh){el.classList.add('pre');io.observe(el);}
+  });
+  setTimeout(function(){d.querySelectorAll('.pre').forEach(function(el){el.classList.remove('pre');})},6000); /* safety net */
+
+  /* pipe fills with scroll through the process */
+  var fill=d.getElementById('pipeFill'), proc=d.querySelector('.proc-wrap');
+  function pipe(){var r=proc.getBoundingClientRect(),p=(vh*0.7-r.top)/(r.height);p=Math.max(0,Math.min(1,p));fill.style.strokeDashoffset=(500*(1-p)).toFixed(1);}
+  window.addEventListener('scroll',function(){requestAnimationFrame(pipe)},{passive:true});pipe();
+})();
+</script>
+</body>
+</html>
