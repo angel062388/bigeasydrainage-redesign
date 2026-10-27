@@ -251,6 +251,10 @@ section{padding:92px 0}
 .rv-btn:hover{background:var(--ink);color:#fff}
 .rv-btn:disabled{opacity:.35;cursor:default;background:#fff;color:var(--ink)}
 .rv-btn svg{width:18px;height:18px}
+.rv-play{width:40px;height:40px;border-width:1.5px;margin-left:4px}
+.rv-play svg{width:14px;height:14px}
+.rv-play .i-play{display:none}
+.rv-play.paused .i-play{display:block}.rv-play.paused .i-pause{display:none}
 .rv-level{flex:0 1 280px;height:12px;border-radius:6px;background:#dfe4e6;overflow:hidden;box-shadow:inset 0 2px 0 rgba(15,34,48,.08)}
 .rv-level span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--water-2),var(--water));transition:width .35s ease}
 
@@ -380,6 +384,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
 #picker{scroll-margin-top:120px}
 @media (max-width:640px){.vhero{padding:70px 0;min-height:76vh}.vh-scroll{display:none}.vh-actions .btn{width:100%}.vh-actions{width:100%;max-width:340px}}
 @media (prefers-reduced-motion:reduce){
+  .rv-play{display:none}
   .rv::before{transform:none!important}.rv-track{scroll-behavior:auto}
   .vh-pause{display:none}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -799,6 +804,7 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
         <button class="rv-btn" id="rvPrev" type="button" aria-label="Previous reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="rv-level" aria-hidden="true"><span id="rvLevel"></span></div>
         <button class="rv-btn" id="rvNext" type="button" aria-label="Next reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button class="rv-btn rv-play" id="rvPlay" type="button" aria-label="Pause automatic sliding" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5l11 7-11 7z"/></svg></button>
       </div>
     </div>
   </div>
@@ -816,8 +822,44 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding
     lvl.style.width=Math.max(8,Math.min(100,seen*100))+'%';
     prev.disabled = x<=2; next.disabled = x>=max-2;
   }
-  prev.addEventListener('click',function(){ t.scrollBy({left:-step(),behavior:'smooth'}); });
-  next.addEventListener('click',function(){ t.scrollBy({left:step(),behavior:'smooth'}); });
+  prev.addEventListener('click',function(){ t.scrollBy({left:-step(),behavior:'smooth'}); restart(); });
+  next.addEventListener('click',function(){ t.scrollBy({left:step(),behavior:'smooth'}); restart(); });
+
+  /* auto-slide: one card every 5s, loops back to the first; stops for hover, keyboard focus, touch,
+     when the section is off screen or the tab is hidden, and when the visitor presses pause */
+  var play=document.getElementById('rvPlay'), flow=t.closest('.rv-flow');
+  var reduce=false; try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  var DELAY=5000, timer=null, userPaused=reduce, hovering=false, focused=false, touching=false, onScreen=false;
+  function canRun(){ return !userPaused && !hovering && !focused && !touching && onScreen && !document.hidden; }
+  function advance(){
+    var max=t.scrollWidth-t.clientWidth;
+    if(t.scrollLeft>=max-2){ t.scrollTo({left:0,behavior:'smooth'}); } else { t.scrollBy({left:step(),behavior:'smooth'}); }
+  }
+  function schedule(){ clearTimeout(timer); timer=null; if(canRun()) timer=setTimeout(function(){ advance(); schedule(); },DELAY); }
+  function restart(){ schedule(); }
+  window.__rvAuto={advance:advance,state:function(){return {running:!!timer,userPaused:userPaused,hovering:hovering,focused:focused,onScreen:onScreen};}};
+  if(!reduce){
+    play.addEventListener('click',function(){
+      userPaused=!userPaused; play.classList.toggle('paused',userPaused);
+      play.setAttribute('aria-pressed',userPaused); play.setAttribute('aria-label',userPaused?'Start automatic sliding':'Pause automatic sliding');
+      schedule();
+    });
+    flow.addEventListener('mouseenter',function(){ hovering=true; schedule(); });
+    flow.addEventListener('mouseleave',function(){ hovering=false; schedule(); });
+    flow.addEventListener('focusin',function(e){ focused = e.target!==play; schedule(); });
+    flow.addEventListener('focusout',function(){ focused=false; schedule(); });
+    t.addEventListener('touchstart',function(){ touching=true; schedule(); },{passive:true});
+    t.addEventListener('touchend',function(){ setTimeout(function(){ touching=false; schedule(); },4000); },{passive:true});
+    document.addEventListener('visibilitychange',schedule);
+    function checkVisible(){
+      var r=flow.getBoundingClientRect(), vh=window.innerHeight||document.documentElement.clientHeight;
+      var now = r.top < vh*0.75 && r.bottom > vh*0.25;
+      if(now!==onScreen){ onScreen=now; schedule(); }
+    }
+    window.addEventListener('scroll',checkVisible,{passive:true});
+    window.addEventListener('resize',checkVisible);
+    checkVisible();
+  }
   t.addEventListener('scroll',update,{passive:true});
   window.addEventListener('resize',update);
   if('IntersectionObserver' in window){
